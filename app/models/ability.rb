@@ -15,10 +15,6 @@ class Ability
     else
       user.roles.each do |role|
         role.permissions.each do |permission|
-          if permission.subject_class.nil?
-            can permission.action.to_sym
-            return
-          end
           if !permission.un_constantize
             sec_param = permission.subject_class.constantize
           else
@@ -30,6 +26,8 @@ class Ability
             can permission.action.to_sym, :all
           elsif !permission.more.nil?
             can permission.action.to_sym, sec_param
+          elsif permission.subject_class.nil?
+            can permission.action.to_sym
           else
             can permission.action.to_sym, sec_param, :id => permission.subject_id
           end
