@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Ruby on Rails Tutorial: sample application
 
 This is the sample application for
@@ -13,3 +14,9 @@ by [Michael Hartl](http://michaelhartl.com/). You can use this reference impleme
     $ bundle exec rspec spec/
 
 If the tests don't pass, it means there may be something wrong with your system. If they do pass, then you can debug your code by comparing it with the reference implementation.
+=======
+ojneuveville
+============
+
+Le site de l'Oj de La Neuveville
+>>>>>>> a97b14ce81ea405215cb97cb950fe8d9ba69516b
