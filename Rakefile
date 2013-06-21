@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-OjNeuvevile::Application.load_tasks
+OjNeuveville::Application.load_tasks
