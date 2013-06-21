@@ -1,0 +1,21 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+      <%= @user.fName%>
+       <% if @user.roles.empty? %>
+      		<p>Aucun rôles pour le moment</p>
+      	<% else %>
+      	<ul>
+      	<% @user.roles.each do |r| %>
+      		<li><%= r.name %></li>
+      	<% end %>
+      </ul>
+      <% end %>
+    </section>
+    
+  </aside>

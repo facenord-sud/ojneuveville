@@ -1,0 +1,27 @@
+<h1>Tous les rôles</h1>
+
+<table class="table">
+  <tr>
+    <th>Pseudo</th>
+    <th>Nom visible</th>
+    <th>Déscription</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @roles.each do |role| %>
+  <tr>
+    <td><%= role.nick_name %></td>
+    <td><%= role.name %></td>
+    <td><%= role.description %></td>
+    <td><%= link_to 'Voir', role %></td>
+    <td><%= link_to 'Editer', edit_role_path(role) %></td>
+    <td><%= link_to 'Supprimer', role, method: :delete, data: { confirm: 'Êtes-vous sûre ?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nouveau rôle', new_role_path, :class => "btn btn-success" %>
