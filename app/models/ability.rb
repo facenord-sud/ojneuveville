@@ -7,9 +7,12 @@ class Ability
       can :create, User
       return
     elsif user.roles.empty?
+      if User.count == 1
+        can :manage, :all
+      end
       can :update, User
       can :read, User
-    elsif !user.roles.empty?
+    else
       user.roles.each do |role|
         role.permissions.each do |permission|
           if permission.subject_class.nil?
@@ -31,10 +34,6 @@ class Ability
             can permission.action.to_sym, sec_param, :id => permission.subject_id
           end
         end
-      end
-    else
-      if User.count == 1
-        can :manage, :all
       end
     end
   end
