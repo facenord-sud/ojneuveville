@@ -1,0 +1,19 @@
+<% provide(:title, t("events.index.title")) %>
+<h1><%= t("events.index.title")%></h1>
+
+<% if @events.empty?%>
+<p><%= t "events.index.no_display"%></p>
+<% else%>
+<table class="table table-stripped table-bordered">
+	<thead>
+		<tr>
+			<th><%= t "events.index.thead.name"%></th>
+			<th><%= t "events.index.thead.date"%></th>
+			<th><%= t "events.index.thead.place"%></th>
+			<th><%= t "events.index.thead.price"%></th>
+			<th><%= t "events.index.thead.responsable"%></th>
+		</tr>
+	</thead>
+	<%= render @events%>
+</table>
+<% end%>

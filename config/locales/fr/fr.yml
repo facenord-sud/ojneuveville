@@ -11,6 +11,11 @@ fr:
             profile: "Profil"
             settings: "Paramètres"
             sign_out: "Déconnexion"
+        event:
+            title: "Sorties"
+            program: "Programme anuel"
+            next: "Prochaine sortie"
+            new: "Nouvelle sortie"
         signin: "Connexion"
     footer:
         small:
@@ -77,5 +82,13 @@ fr:
             submit: "Créer mon compte"
         update:
             success: "Profil mis à jour"
-        destroy:
-            success: "Utilisateur supprimé"
+    events:
+        index:
+            title: "Programme annuel"
+            no_display: "Aucune sortie pour cette année"
+            thead:
+                name: "Sortie"
+                date: "Date"
+                place: "Lieu"
+                price: "Prix"
+                responsable: "Responsable"

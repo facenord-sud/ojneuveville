@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 OjNeuveville::Application.routes.draw do
   
+  resources :events, path: "sorties"
+
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   root to: 'static_pages#home'

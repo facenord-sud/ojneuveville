@@ -196,7 +196,7 @@ fr-CH:
     formats:
       default: ! '%d. %B %Y %H:%M'
       long: ! '%A, %d. %B %Y %H:%M:%S %Z'
-      short: ! '%d. %b %H:%M'
+      short: ! ' %d. %b %H:%M'
     pm: pm
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
