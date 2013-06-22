@@ -107,7 +107,7 @@ fr:
         update:
             success: "La sortie a été mise à jour"
         create:
-            success: "La sortie a bien été créée"
+            success: "La sortie a été créée"
         destroy:
             success: "La sortie a été supprimées"
         new:
