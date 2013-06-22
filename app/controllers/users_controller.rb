@@ -3,9 +3,7 @@ class UsersController < ApplicationController
 
 load_and_authorize_resource
 
-  before_filter :signed_in_user, 
-                only: [:index, :edit, :update, :destroy, :following, :followers]
-  before_filter :correct_user,   only: [:edit, :update]
+  before_filter :find_user
 
   def index
     @users = User.paginate(page: params[:page])
@@ -23,7 +21,7 @@ load_and_authorize_resource
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = "Welcome to the Sample App!"
+      flash[:success] = t :greetings
       redirect_to @user
     else
       render 'new'
@@ -37,7 +35,7 @@ load_and_authorize_resource
 
     @user.name = params[:user][:name]
     if @user.save
-      flash[:success] = "Profile updated"
+      flash[:success] = t "users.update.success"
       sign_in @user
       redirect_to @user
     else
@@ -45,20 +43,10 @@ load_and_authorize_resource
     end
   end
 
-  def destroy
-    User.find(params[:id]).destroy
-    flash[:success] = "User destroyed."
-    redirect_to users_url
-  end
-
-  def admin
-    @user = User.find(params[:id])
-  end
-
 
   private
 
-    def correct_user
+    def find_user
       @user = User.find(params[:id])
     end
 end

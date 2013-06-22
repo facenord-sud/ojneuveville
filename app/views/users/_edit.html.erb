@@ -3,22 +3,17 @@
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name %>
+      <%= f.label :name, t("users.shared.form.name") %>
       <%= f.text_field :name %>
 
-      <%= f.label :email %>
+      <%= f.label :email, t("users.shared.form.email") %>
       <%= f.text_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label :password, t("users.shared.form.password") %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.label :password_confirmation, t("users.shared.form.password_confirmation") %>
       <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      <%= f.submit yield(:submit), class: "btn btn-large btn-primary" %>
     <% end %>
-
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
-  </div>
-</div>

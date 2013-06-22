@@ -1,8 +1,13 @@
-<% provide(:title, 'Help') %>
-<h1>Help</h1>
+<% provide(:title, t("static.help.title")) %>
+<h1><%= t "static.help.title"%></h1>
 <p>
-  Get help on the Ruby on Rails Tutorial at the
-  <a href="http://railstutorial.org/help">Rails Tutorial help page</a>.
-  To get help on this sample app, see the
-  <a href="http://railstutorial.org/book">Rails Tutorial book</a>.
+ <%= t "static.help.text.p1"%>
+ <%= link_to t("static.help.text.contact"), contact_path%>
+</p>
+<p>
+	<%= t "static.help.text.links.title"%>
+	<ul>
+		<li><a href="http://www.sac-cas.ch"><%= t "static.help.text.links.cas"%></a></li>
+		<li><a href="http://www.cas-laneuveville.ch"><%= t "static.help.text.links.cas_n"%></a></li>
+	</ul>
 </p>

@@ -1,5 +1,80 @@
 fr:
     home: "Page d'accueil"
     greetings: "Bienvenue à l'oj"
-    app_name: "Oj La Neuveville"
+    app_name: "Oj de La Neuveville"
     access_denied: "Accès refusé"
+    header:
+        help: "Aide"
+        account:
+            title: "Mon compte"
+            profile: "Profil"
+            settings: "Paramètres"
+            sign_out: "Déconnexion"
+        signin: "Connexion"
+    footer:
+        small:
+            link: "Site web"
+            by: "réalisé par %{author}"
+        nav:
+            contact: "Contact"
+            about: "A propos"
+            cas: "Club Alpin Suisse"
+            cas_n: "Section de La Neuveville"
+    roles:
+        show:
+            title: "Le rôle %{name}"
+    sessions:
+        new:
+            title: "Connexion"
+            form:
+                email: "Adresse de courriel"
+                password: "Mot de passe"
+            new_user: "Nouvel utilisateur ? "
+            sign_up: "Enregistrez-vous maintenant !"
+        create:
+            error: "L'adresse de courriel ou le mot de passe est invalide"
+    shared:
+        error:
+            name: "erreur"
+            msg: "Le formulaire contient %{error}."
+        user_info:
+            profile: "Voir mon profil"
+    static:
+        about:
+            title: "A propos de nous"
+            text: "Ce site est un projet pour aider à l'organistion de l'oj de La Neuveville. Il a été réalisé dans le cadre d'un projet pour l'"
+        contact:
+            title: "Contact"
+            text:
+                p1: "Si vous avez des questions ou des remarques, vous pouvez nous contacter à l'adresse facenord.sud@gmail.com"
+                p2: "Nous nous ferons un plaisir d'y répondre"
+        help:
+            title: "Aide"
+            text:
+                p1: "Si vous avez des questions, n'hésitez pas à nous"
+                contact: "contacter"
+                links:
+                    title: "Liens utiles"
+                    cas: "Club Alpin Suisse"
+                    cas_n: "Section du Club Alpin de La Neuveville"
+
+    users:
+        shared:
+            form:
+                name: "Pseudo"
+                email: "Adresse de courriel"
+                password: "Mot de passe"
+                password_confirmation: "Confirmation du mot de passe"
+        edit:
+            title: "Mettre à jour votre profil"
+            change: "changer"
+            submit: "Appliquer les changements"
+        index:
+            title: "Tous les utilisateurs"
+        new:
+            title: "Nouvelle insciption"
+            submit: "Créer mon compte"
+        update:
+            success: "Profil mis à jour"
+        destroy:
+            success: "Utilisateur supprimé"

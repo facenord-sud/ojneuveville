@@ -1,13 +1,15 @@
 <footer class="footer">
   <small>
-    <a href="http://railstutorial.org/">Rails Tutorial</a>
-    by Michael Hartl
+    <%= link_to t("footer.small.link")%>
+    <%= t "footer.small.by", author: "Numa de Montmollin"%>
   </small>
   <nav>
     <ul>
-      <li><%= link_to "About",   about_path %></li>
-      <li><%= link_to "Contact", contact_path %></li>
-      <li><a href="http://news.railstutorial.org/">News</a></li>
+      <li><%= link_to t("footer.nav.about"),   about_path %></li>
+      <li><%= link_to t("footer.nav.contact"), contact_path %></li>
+      <li><%= link_to t("header.help"), help_path%></li>
+      <li><a href="http://www.sac-cas.ch"> <%= t "footer.nav.cas"%><a></li>
+      <li><a href="http://www.cas-laneuveville.ch"> <%= t "footer.nav.cas_n"%><a></li>
     </ul>
   </nav>
 </footer>

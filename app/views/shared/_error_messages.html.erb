@@ -1,7 +1,7 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-error">
-      Le formulaire contient <%= pluralize(object.errors.count, "cheval") %>.
+      <%= t("shared.error.msg", error: pluralize(object.errors.count, t("shared.error.name")))%>
     </div>
     <ul>
     <% object.errors.full_messages.each do |msg| %>
