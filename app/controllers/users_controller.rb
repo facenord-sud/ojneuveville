@@ -3,14 +3,13 @@ class UsersController < ApplicationController
 
 load_and_authorize_resource
 
-  before_filter :find_user
+  before_filter :find_user, only:[:edit, :show]
 
   def index
     @users = User.paginate(page: params[:page])
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def new

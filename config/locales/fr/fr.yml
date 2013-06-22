@@ -3,6 +3,7 @@ fr:
     greetings: "Bienvenue à l'oj"
     app_name: "Oj de La Neuveville"
     access_denied: "Accès refusé"
+
     header:
         help: "Aide"
         account:
@@ -44,7 +45,7 @@ fr:
             title: "A propos de nous"
             text: "Ce site est un projet pour aider à l'organistion de l'oj de La Neuveville. Il a été réalisé dans le cadre d'un projet pour l'"
         contact:
-            title: "Contact"
+            title: "Nous contacter"
             text:
                 p1: "Si vous avez des questions ou des remarques, vous pouvez nous contacter à l'adresse facenord.sud@gmail.com"
                 p2: "Nous nous ferons un plaisir d'y répondre"

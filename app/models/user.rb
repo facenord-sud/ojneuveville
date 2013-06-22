@@ -15,7 +15,7 @@
 
 # -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation, :fName, :role_ids
+  attr_accessible :name, :email, :password, :password_confirmation, :role_ids
 
   has_secure_password
   

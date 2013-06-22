@@ -3,23 +3,19 @@ OjNeuveville::Application.routes.draw do
   
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
-
-
-  resources :users 
-  
+  root to: 'static_pages#home'
+  resources :users, only: [:new, :create, :update, :show, :index, :edit], path: "membres"    
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :roles, only: [:show]
-      
-  root to: 'static_pages#home'
 
-  match '/signup',  to: 'users#new'
-  match '/signin',  to: 'sessions#new'
-  match '/signout', to: 'sessions#destroy', via: :delete
-      
-  match '/help',    to: 'static_pages#help'
-  match '/about',   to: 'static_pages#about'
-  match '/contact', to: 'static_pages#contact'
+  match '/nouvelle-inscription',  to: 'users#new', as: "signup"
+  match '/connexion',  to: 'sessions#new', as: "signin"
+  match '/deconnexion', to: 'sessions#destroy', via: :delete, as: "signout"
+        
+  match '/aide',    to: 'static_pages#help', as: "help"
+  match '/a-propos',   to: 'static_pages#about', as: "about"
+  match '/nous-contacter', to: 'static_pages#contact', as: "contact"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
