@@ -1,6 +1,5 @@
 # -*- encoding : utf-8 -*-
 class RolesController < ApplicationController
-
   # GET /roles/1
   # GET /roles/1.json
   def show

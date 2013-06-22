@@ -3,6 +3,7 @@ fr:
     greetings: "Bienvenue à l'oj"
     app_name: "Oj de La Neuveville"
     access_denied: "Accès refusé"
+    confirm: "Etes-vous certain ?"
 
     header:
         help: "Aide"
@@ -83,6 +84,15 @@ fr:
         update:
             success: "Profil mis à jour"
     events:
+        shared:
+            form:
+                name: "Nom de la sortie"
+                description: "Déscription"
+                starting_at: "Commence le"
+                ending_at: "Finit le"
+                place: "Lieu"
+                responsable: "Responsable"
+                price: "Prix"
         index:
             title: "Programme annuel"
             no_display: "Aucune sortie pour cette année"
@@ -92,3 +102,17 @@ fr:
                 place: "Lieu"
                 price: "Prix"
                 responsable: "Responsable"
+                edit: "Editer"
+                delete: "Supprimer"
+        update:
+            success: "La sortie a été mise à jour"
+        create:
+            success: "La sortie a bien été créée"
+        destroy:
+            success: "La sortie a été supprimées"
+        new:
+            title: "Nouvelle sortie"
+            submit: "Créer la sortie"
+        edit:
+            title: "Modifier la sortie"
+            submit: "Appliquer les changements"

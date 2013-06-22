@@ -9,9 +9,9 @@
 		<tr>
 			<th><%= t "events.index.thead.name"%></th>
 			<th><%= t "events.index.thead.date"%></th>
-			<th><%= t "events.index.thead.place"%></th>
+			<%if can?(:read, Event)%><th><%= t "events.index.thead.place"%></th><% end%>
 			<th><%= t "events.index.thead.price"%></th>
-			<th><%= t "events.index.thead.responsable"%></th>
+			<%if can? :read, Event%><th><%= t "events.index.thead.responsable"%></th><% end%>
 		</tr>
 	</thead>
 	<%= render @events%>

@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
 load_and_authorize_resource
 
-  before_filter :find_user, only:[:edit, :show]
+  before_filter :find_user, only:[:edit, :show, :update]
 
   def index
     @users = User.paginate(page: params[:page])
@@ -32,8 +32,8 @@ load_and_authorize_resource
 
   def update
 
-    @user.name = params[:user][:name]
-    if @user.save
+    
+    if @user.update_attributes(params[:user])
       flash[:success] = t "users.update.success"
       sign_in @user
       redirect_to @user

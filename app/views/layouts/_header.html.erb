@@ -11,11 +11,15 @@
               </a>
               <ul class="dropdown-menu">
                 <li><%= link_to t("header.event.program"), events_path %></li>
-                <li><%= link_to t("header.event.next"), root_path %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to t("header.event.new"), new_event_path, method: "delete" %>
-                </li>
+                <% if can? :next_event, Event%>
+                  <li><%= link_to t("header.event.next"), root_path %></li>
+                <% end%>
+                <% if can? :create, Event%>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to t("header.event.new"), new_event_path%>
+                  </li>
+                <% end%>
               </ul>
             </li>
           <% if signed_in? %>

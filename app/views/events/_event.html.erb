@@ -1,7 +1,23 @@
 <tr>
-	<td><%= link_to event.name, event%></td>
+	<td>
+		<%if cannot? :read, Event%>
+		<%= event.name%>
+		<% end%>
+		<%if can? :read, Event%><%= link_to event do %>
+			<%= event.name%>
+		<% end%><% end%>
+		<%if can? :create, Event%>|
+		<%= link_to edit_event_path(event) do %>
+  			<i class="icon-pencil"></i>
+		<% end %><% end%>
+		<%if can? :delete, Event%>|
+		<%= link_to event, :method => :delete,
+                                 :confirm => t(:confirm) do %>
+  			<i class="icon-remove"></i>
+		<% end %><% end%>
+	</td>
 	<td><%= l event.starting_at, :format => :short %> - <%= l event.ending_at, :format => :short %></td>
-	<td><%= event.place%></td>
-	<td><%= event.name%></td>
-	<td><%= event.responsable%></td>
+	<%if can? :read, Event%><td><%= event.place%></td><% end%>
+	<td><%= event.price%>.-</td>
+	<%if can? :read, Event%><td><%= event.responsable%></td><% end%>
 </tr>

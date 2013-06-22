@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@event) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :name, t("events.shared.form.name") %>
+      <%= f.text_field :name %>
+
+      <%= f.label :description, t("events.shared.form.description") %>
+      <%= f.text_field :description %>
+
+      <%= f.label :starting_at, t("events.shared.form.starting_at") %>
+      <%= f.datetime_select :starting_at%>
+
+      <%= f.label :ending_at, t("events.shared.form.ending_at") %>
+      <%= f.datetime_select :ending_at %>
+
+      <%= f.label :place, t("events.shared.form.place") %>
+      <%= f.text_field :place %>
+
+      <%= f.label :responsable, t("events.shared.form.responsable") %>
+      <%= f.text_field :responsable %>
+
+      <%= f.label :price, t("events.shared.form.price") %>
+      <%= f.text_field :price %>
+
+      <%= f.submit yield(:submit), class: "btn btn-large btn-primary" %>
+    <% end %>

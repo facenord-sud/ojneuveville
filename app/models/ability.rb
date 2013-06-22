@@ -5,11 +5,13 @@ class Ability
   def initialize(user)
     if user.nil?
       can :create, User
+      can :index, Event
       return
     elsif user.roles.empty?
       if User.count == 1
         can :manage, :all
       end
+      can :index, Event
       can :update, User
       can :read, User
     else
