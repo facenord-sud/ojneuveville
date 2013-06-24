@@ -13,6 +13,7 @@ gem 'i18n'
 gem "french_rails", "~> 0.2.7"
 gem 'rails_admin'
 gem 'rails_admin-i18n'
+gem 'date_validator'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

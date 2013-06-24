@@ -4,6 +4,8 @@ fr:
     app_name: "Oj de La Neuveville"
     access_denied: "Accès refusé"
     confirm: "Etes-vous certain ?"
+    du: "du"
+    au: "au"
 
     header:
         help: "Aide"
@@ -83,7 +85,14 @@ fr:
             submit: "Créer mon compte"
         update:
             success: "Profil mis à jour"
+        show:
+            event:
+                name: "sortie"
+                text: "Inscrit à %{event}"
+
     events:
+        error:
+            past: "Vous ne pouvez pas modifier un événemnt passé"
         shared:
             form:
                 name: "Nom de la sortie"
@@ -93,17 +102,30 @@ fr:
                 place: "Lieu"
                 responsable: "Responsable"
                 price: "Prix"
+            programm:
+                thead:
+                    name: "Sortie"
+                    date: "Date"
+                    place: "Lieu"
+                    price: "Prix"
+                    responsable: "Responsable"
+                    edit: "Editer"
+                    delete: "Supprimer"
+                no_display: "Aucune sortie organisée"
         index:
-            title: "Programme annuel"
-            no_display: "Aucune sortie pour cette année"
-            thead:
-                name: "Sortie"
-                date: "Date"
-                place: "Lieu"
-                price: "Prix"
-                responsable: "Responsable"
-                edit: "Editer"
-                delete: "Supprimer"
+            title: "Programme %{date}"
+            nav:
+                year: Programme annuel
+                month: "Mois courant"
+                week: "Semaine courante"
+                day: "Aujourd'hui"
+                next_programm: "Programme %{date}"
+                old_programm: "Programme %{date}"
+                print: "Imprimer"
+                pdf: "Télécharger en PDF"
+                next_event: "Prochaine sortie"
+                new: "Nouvelle sortie"
+                old_event: "Sortie précédante"
         update:
             success: "La sortie a été mise à jour"
         create:
@@ -116,3 +138,23 @@ fr:
         edit:
             title: "Modifier la sortie"
             submit: "Appliquer les changements"
+        show:
+            price: "Prix : "
+            responsable: "Responsable : "
+            place: "Place  : "
+            list_users: "Participants"
+            no_user: "Personne ne participe à cette sortie. Soit le premier!"
+            signup: "Inscription"
+            signout: "Désinscription"
+        signup:
+            success: "Vous participez à la sortie '%{name}'"
+            error: "Vous êtes déjà inscris à '%{name}'"
+        signout:
+            success: "Vous vous êtes déinscrit de '%{name}'"
+    errors:
+        messages:
+            not_a_date: "n'est pas une date"
+            after: "doit être après %{date}"
+            after_or_equal_to: "doit être supérieur ou égal à %{date}"
+            before: "doit être avant %{date}"
+            before_or_equal_to: "doit être inférieur ou égal à %{date}"

@@ -7,5 +7,13 @@
         <%= @user.name %>
       </h1>
     </section>
-    
   </aside>
+  <section class="span8">
+  	<h3><%= t "users.show.event.text", :event => pluralize(@user.events.size, t("users.show.event.name"))%></h3>
+  	<ul>
+  		<% @user.events.each do |event|%>
+  			<li><%= link_to event.name, event%></li>
+  		<%end%>
+  	</ul>
+  </section>
+</div>

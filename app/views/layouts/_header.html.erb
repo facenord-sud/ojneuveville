@@ -7,20 +7,7 @@
           <li><%= link_to t(:home), root_path %></li>
           <li><%= link_to t("header.help"), help_path %></li>
           <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= t("header.event.title")%><b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><%= link_to t("header.event.program"), events_path %></li>
-                <% if can? :next_event, Event%>
-                  <li><%= link_to t("header.event.next"), root_path %></li>
-                <% end%>
-                <% if can? :create, Event%>
-                  <li class="divider"></li>
-                  <li>
-                    <%= link_to t("header.event.new"), new_event_path%>
-                  </li>
-                <% end%>
-              </ul>
+              <%= link_to t("header.event.title"), events_path%>
             </li>
           <% if signed_in? %>
             <% if can? :access, :rails_admin%>

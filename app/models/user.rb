@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 # == Schema Information
 #
 # Table name: users
@@ -10,24 +9,28 @@
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
 #  remember_token  :string(255)
-#  fName           :string(255)
 #
 
 # -*- encoding : utf-8 -*-
+# -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation, :role_ids
+  attr_accessible :name, :email, :password, :password_confirmation, :role_ids, :event_ids
 
   has_secure_password
   
   before_save { email.downcase! }
   before_save :create_remember_token
   has_and_belongs_to_many :roles
+  has_and_belongs_to_many :events
 
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :name,  presence: true, length: { maximum: 50 }
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
+  validates :password, presence: true, length: { minimum: 5 }, :on => :create
+  validates :password_confirmation, presence: true, :on => :create
+  after_validation { self.errors.messages.delete(:password_digest) }
 
   private
 

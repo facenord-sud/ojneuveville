@@ -1,15 +1,21 @@
 # -*- encoding : utf-8 -*-
 OjNeuveville::Application.routes.draw do
-  
-  resources :events, path: "sorties"
-
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   root to: 'static_pages#home'
+
+  resources :events, path: "sorties" do
+    match '/programme',  to: 'events#programm', as: "prog"
+    match '/inscription',  to: 'events#signup', as: "signup"
+    match '/desinscription',  to: 'events#signout', as: "signout"
+  end
+
   resources :users, only: [:new, :create, :update, :show, :index, :edit], path: "membres"    
+  
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :roles, only: [:show]
+
 
   match '/nouvelle-inscription',  to: 'users#new', as: "signup"
   match '/connexion',  to: 'sessions#new', as: "signin"

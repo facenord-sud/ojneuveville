@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622135650) do
+ActiveRecord::Schema.define(:version => 20130623135826) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -21,10 +21,17 @@ ActiveRecord::Schema.define(:version => 20130622135650) do
     t.string   "place"
     t.datetime "delay"
     t.string   "responsable"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "price"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.integer  "price",       :default => 10
   end
+
+  create_table "events_users", :id => false, :force => true do |t|
+    t.integer "event_id"
+    t.integer "user_id"
+  end
+
+  add_index "events_users", ["event_id", "user_id"], :name => "index_events_users_on_event_id_and_user_id"
 
   create_table "permissions", :force => true do |t|
     t.string   "action"

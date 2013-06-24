@@ -1,0 +1,17 @@
+
+<% if @event.empty?%>
+<p><%= t "events.shared.programm.no_display"%></p>
+<% else%>
+<table class="table table-stripped table-bordered">
+	<thead>
+		<tr>
+			<th><%= t "events.shared.programm.thead.name"%></th>
+			<th><%= t "events.shared.programm.thead.date"%></th>
+			<%if can?(:read, Event)%><th><%= t "events.shared.programm.thead.place"%></th><% end%>
+			<th><%= t "events.shared.programm.thead.price"%></th>
+			<%if can? :read, Event%><th><%= t "events.shared.programm.thead.responsable"%></th><% end%>
+		</tr>
+	</thead>
+	<%= render @event%>
+</table>
+<% end%>
