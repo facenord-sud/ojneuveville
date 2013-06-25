@@ -14,6 +14,7 @@ gem "french_rails", "~> 0.2.7"
 gem 'rails_admin'
 gem 'rails_admin-i18n'
 gem 'date_validator'
+gem 'simple_form'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

@@ -143,9 +143,13 @@ fr:
             responsable: "Responsable : "
             place: "Place  : "
             list_users: "Participants"
+            material: "Materiel : "
+            no_material: "Aucun matériel n'est nécessaire"
             no_user: "Personne ne participe à cette sortie. Soit le premier!"
             signup: "Inscription"
             signout: "Désinscription"
+            update: "Modifier"
+            destroy: "Supprimer"
         signup:
             success: "Vous participez à la sortie '%{name}'"
             error: "Vous êtes déjà inscris à '%{name}'"

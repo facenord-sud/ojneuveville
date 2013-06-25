@@ -16,9 +16,10 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :delay, :description, :ending_at, :name, :place, :responsable, :starting_at, :price, :user_ids
+  attr_accessible :delay, :description, :ending_at, :name, :place, :responsable, :starting_at, :price, :user_ids, :material_ids
   
   has_and_belongs_to_many :users
+  has_and_belongs_to_many :materiaux
 
   validates :name, presence: true, length: { maximum: 30}
   validates :description, presence: true

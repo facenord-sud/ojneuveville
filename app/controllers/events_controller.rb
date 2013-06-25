@@ -77,14 +77,14 @@ before_filter :change_event, only:[:edit, :destroy, :update]
 	private
 
 		def get_event_by_date(start_at, end_at)
-			Event.where(:starting_at => (start_at)..(end_at)).all
+			Event.where(:starting_at => (start_at)..(end_at)).order("starting_at ASC").all
 		end
 
 		def change_event
 			@event = Event.find(params[:id])
 			if @event.starting_at.past?
 				flash[:error] = t "events.error.past"
-				redirect_to events_path
+				redirect_to event_prog_path(@event.starting_at.year)
 			end
 		end
 end

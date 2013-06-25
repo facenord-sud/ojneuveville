@@ -1,28 +1,25 @@
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@event) do |f| %>
+    <%= simple_form_for @event do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name, t("events.shared.form.name") %>
-      <%= f.text_field :name %>
+      <%= f.input :name, label: t("events.shared.form.name") %>
 
-      <%= f.label :description, t("events.shared.form.description") %>
-      <%= f.text_field :description %>
+      <%= f.input :description, label: t("events.shared.form.description"), input_html: {rows: "3" } %>
 
-      <%= f.label :starting_at, t("events.shared.form.starting_at") %>
-      <%= f.datetime_select :starting_at%>
+      <%= f.input :starting_at, label: t("events.shared.form.starting_at"), input_html: {class: "span1" }%>
 
-      <%= f.label :ending_at, t("events.shared.form.ending_at") %>
-      <%= f.datetime_select :ending_at %>
+      <%= f.input :ending_at, label: t("events.shared.form.ending_at"), input_html: {class: "span1" } %>
 
-      <%= f.label :place, t("events.shared.form.place") %>
-      <%= f.text_field :place %>
+      <%= f.input :place, label: t("events.shared.form.place") %>
 
-      <%= f.label :responsable, t("events.shared.form.responsable") %>
-      <%= f.text_field :responsable %>
+      <%= f.input :responsable, label: t("events.shared.form.responsable") %>
 
-      <%= f.label :price, t("events.shared.form.price") %>
-      <%= f.text_field :price %>
+      <%= f.input :price, label: t("events.shared.form.price"), :wrapper => :append do %>
+      <%= f.number_field :price%><span class="add-on">CHF</span>
+      <%end%>
+
+      <%= f.association :materiaux, as: :check_boxes %>
 
       <%= f.submit yield(:submit), class: "btn btn-large btn-primary" %>
     <% end %>
