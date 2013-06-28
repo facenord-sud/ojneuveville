@@ -1,15 +1,14 @@
-<footer class="footer">
-  <small>
+<!--<p>
     <%= link_to t("footer.small.link")%>
     <%= t "footer.small.by", author: "Numa de Montmollin"%>
-  </small>
-  <nav>
-    <ul>
-      <li><%= link_to t("footer.nav.about"),   about_path %></li>
+
+    
+</p>-->
+<ul class="nav nav-pills pull-right">
       <li><%= link_to t("footer.nav.contact"), contact_path %></li>
       <li><%= link_to t("header.help"), help_path%></li>
       <li><a href="http://www.sac-cas.ch"> <%= t "footer.nav.cas"%><a></li>
-      <li><a href="http://www.cas-laneuveville.ch"> <%= t "footer.nav.cas_n"%><a></li>
-    </ul>
-  </nav>
-</footer>
+</ul>
+<%= link_to t("footer.small.link"), about_path%>
+<%= t "footer.small.by", author: "Numa de Montmollin"%>.
+L'Oj fait partie de la <a href="http://www.cas-laneuveville.ch">Section de La Neuveville</a>

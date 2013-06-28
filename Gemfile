@@ -25,6 +25,8 @@ group :development, :test do
   gem 'spork', '0.9.2'
   gem "quiet_assets", ">= 1.0.1" # <a href="https://github.com/evrone/quiet_assets" target="_blank">https://github.com/evrone/quiet_assets</a>
   gem "annotate", :git => 'git://github.com/ctran/annotate_models.git' # <a href="https://github.com/ctran/annotate_models" target="_blank">https://github.com/ctran/annotate_models</a>
+  gem 'meta_request'
+  gem 'guard-livereload'
 end
 
 # Gems used only for assets and not required

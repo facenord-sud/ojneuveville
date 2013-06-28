@@ -1,6 +1,9 @@
 # -*- encoding : utf-8 -*-
 OjNeuveville::Application.routes.draw do
 
+  resources :courriels
+
+
   resources :materiaux, path: "materiel"
 
 
@@ -18,7 +21,6 @@ OjNeuveville::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   resources :roles, only: [:show]
-
 
   match '/nouvelle-inscription',  to: 'users#new', as: "signup"
   match '/connexion',  to: 'sessions#new', as: "signin"

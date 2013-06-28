@@ -6,6 +6,7 @@ class Ability
     if user.nil?
       can :create, User
       can :index, Event
+      can :programm, Event
       return
     elsif user.roles.empty?
       if User.count == 1
@@ -14,6 +15,7 @@ class Ability
       can :index, Event
       can :update, User
       can :read, User
+      can :programm, Event
     else
       user.roles.each do |role|
         role.permissions.each do |permission|

@@ -9,9 +9,21 @@
             </li>
           <% if signed_in? %>
             <% if can? :access, :rails_admin%>
-              <li>
-                <%= link_to "Administration", rails_admin.dashboard_path%>
-              </li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= t("header.admin.title")%><b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <%= link_to t("header.admin.dashboard"), rails_admin.dashboard_path%>
+                </li>
+                <li>
+                  <%= link_to t("header.admin.users"), users_path%>
+                </li>
+                <li>
+                  <%= link_to t("header.admin.email"), rails_admin.dashboard_path%>
+                </li>
+              </ul>
+            </li>
             <% end %>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= t("header.account.title")%><b class="caret"></b>

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130624224458) do
+ActiveRecord::Schema.define(:version => 20130625204012) do
+
+  create_table "courriels", :force => true do |t|
+    t.string   "from"
+    t.string   "subject"
+    t.text     "message"
+    t.datetime "send_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.boolean  "is_send"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -85,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20130624224458) do
     t.text     "description", :limit => 255
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "nick_name"
   end
 
   create_table "roles_users", :id => false, :force => true do |t|

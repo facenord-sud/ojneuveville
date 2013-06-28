@@ -20,7 +20,9 @@ load_and_authorize_resource
     @user = User.new(params[:user])
     if @user.save
       sign_in @user
-      flash[:success] = t :greetings
+      flash[:success] = t("users.new.success", email: @user.email)
+      UserMailer.registration_confirmation(@user).deliver
+      UserMailer.registration_admin(@user).deliver
       redirect_to @user
     else
       render 'new'

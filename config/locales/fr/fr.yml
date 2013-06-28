@@ -1,7 +1,7 @@
 fr:
     home: "Page d'accueil"
     greetings: "Bienvenue à l'oj"
-    app_name: "Oj de La Neuveville"
+    app_name: "Oj La Neuveville"
     access_denied: "Accès refusé"
     confirm: "Etes-vous certain ?"
     du: "du"
@@ -9,6 +9,11 @@ fr:
 
     header:
         help: "Aide"
+        admin:
+            title: "Administration"
+            dashboard: "Tableau de bord"
+            users: "Tous les utilisateurs"
+            email: "Envoyer des courriels"
         account:
             title: "Mon compte"
             profile: "Profil"
@@ -83,6 +88,7 @@ fr:
         new:
             title: "Nouvelle insciption"
             submit: "Créer mon compte"
+            success: "Bienvenue à l'Oj, un courriel a été envoyé à l'adresse %{email}"
         update:
             success: "Profil mis à jour"
         show:
@@ -162,3 +168,9 @@ fr:
             after_or_equal_to: "doit être supérieur ou égal à %{date}"
             before: "doit être avant %{date}"
             before_or_equal_to: "doit être inférieur ou égal à %{date}"
+    mailer:
+        user:
+            registration_confirm:
+                subject1: "Bienvenue sur le site de l'Oj de La Neuveville"
+                subject2: "Un nouveau membre s'est inscrit à l'Oj de La Neuveville"
+
