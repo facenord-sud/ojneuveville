@@ -3,6 +3,7 @@ OjNeuveville::Application.routes.draw do
 
   resources :courriels
 
+  resources :contacts
 
   resources :materiaux, path: "materiel"
 

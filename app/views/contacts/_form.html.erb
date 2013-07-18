@@ -1,0 +1,14 @@
+<%= simple_form_for(@contact, remote: true) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :fName %>
+    <%= f.input :lName %>
+    <%= f.input :fixe %>
+    <%= f.input :natel %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

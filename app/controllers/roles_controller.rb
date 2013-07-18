@@ -1,5 +1,8 @@
 # -*- encoding : utf-8 -*-
 class RolesController < ApplicationController
+
+	after_filter :set_back_url
+
   # GET /roles/1
   # GET /roles/1.json
   def show

@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130625204012) do
+ActiveRecord::Schema.define(:version => 20130629094546) do
+
+  create_table "contacts", :force => true do |t|
+    t.string   "fName"
+    t.string   "lName"
+    t.integer  "fixe"
+    t.integer  "natel"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "courriels", :force => true do |t|
     t.string   "from"
@@ -112,8 +122,10 @@ ActiveRecord::Schema.define(:version => 20130625204012) do
     t.datetime "updated_at",      :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.integer  "contact_id"
   end
 
+  add_index "users", ["contact_id"], :name => "index_users_on_contact_id"
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 

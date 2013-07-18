@@ -1,4 +1,7 @@
 class CourrielsController < ApplicationController
+
+  after_filter :set_back_url
+
   # GET /courriels
   # GET /courriels.json
   def index

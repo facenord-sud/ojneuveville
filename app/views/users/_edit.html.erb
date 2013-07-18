@@ -1,19 +1,22 @@
 <div class="row">
   <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
+    <%= simple_form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :name, t("users.shared.form.name") %>
-      <%= f.text_field :name %>
+      <%= f.input :name %>
 
-      <%= f.label :email, t("users.shared.form.email") %>
-      <%= f.text_field :email %>
+      <%= f.input :email %>
 
-      <%= f.label :password, t("users.shared.form.password") %>
-      <%= f.password_field :password %>
+      <%= f.input :password %>
 
-      <%= f.label :password_confirmation, t("users.shared.form.password_confirmation") %>
-      <%= f.password_field :password_confirmation %>
+      <%= f.input :password_confirmation %>
+
+      <%= f.simple_fields_for :contact do |fc|%>
+        <%= fc.input :fName%>
+        <%= fc.input :lName%>
+        <%= fc.input :fixe%>
+        <%= fc.input :natel%>
+      <%end%>
 
       <%= f.submit yield(:submit), class: "btn btn-large btn-primary" %>
     <% end %>

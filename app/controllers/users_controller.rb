@@ -21,21 +21,25 @@ load_and_authorize_resource
     if @user.save
       sign_in @user
       flash[:success] = t("users.new.success", email: @user.email)
+      redirect_to @user
       UserMailer.registration_confirmation(@user).deliver
       UserMailer.registration_admin(@user).deliver
-      redirect_to @user
     else
       render 'new'
     end
   end
 
   def edit
+    if @user.contact.nil? and (@user.has_role? "admin" or @user.has_role? "organizator")
+      @contact = @user.build_contact
+    end
   end
 
   def update
 
     
     if @user.update_attributes(params[:user])
+      flash.delete(:warning)
       flash[:success] = t "users.update.success"
       sign_in @user
       redirect_to @user

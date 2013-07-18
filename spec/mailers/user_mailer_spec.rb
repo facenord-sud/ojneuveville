@@ -5,7 +5,7 @@ describe UserMailer do
   	it "Should be send with correct email adresse"
 
     # Send the email, then test that it got queued
-    email = UserMailer.registration_confirmation(User.new).deliver
+    #email = UserMailer.registration_confirmation(User.new).deliver
     #assert !ActionMailer::Base.deliveries.empty?
  
     # Test the body of the sent email contains what we expect it to

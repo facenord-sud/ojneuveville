@@ -1,0 +1,6 @@
+$('.error-messages').remove();
+<% if @contact.errors.any? %>
+  $('#contact-body').prepend('<%= render "shared/error_messages", object: @contact %>');
+<%else%>
+	$('#test').html('<%= escape_javascript (render @user) %>')
+<% end %>

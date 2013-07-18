@@ -6,6 +6,8 @@ fr:
     confirm: "Etes-vous certain ?"
     du: "du"
     au: "au"
+    complete: "Vous êtes administrateur ou organisateur pour ce site, compléter votre <a href='%{href}'>profile</a>"
+    no_one: "aucun"
 
     header:
         help: "Aide"
@@ -83,6 +85,11 @@ fr:
             title: "Mettre à jour votre profil"
             change: "changer"
             submit: "Appliquer les changements"
+            modal:
+                launch: "Ajouter les infos de contact"
+                title: Informations de contact
+                cancel: "Annuler"
+                save: "Sauvegarder"
         index:
             title: "Tous les utilisateurs"
         new:
@@ -95,6 +102,8 @@ fr:
             event:
                 name: "sortie"
                 text: "Inscrit à %{event}"
+            fixe: "Téléphone fixe : "
+            natel: "Téléphone mobile : "
 
     events:
         error:
@@ -173,4 +182,15 @@ fr:
             registration_confirm:
                 subject1: "Bienvenue sur le site de l'Oj de La Neuveville"
                 subject2: "Un nouveau membre s'est inscrit à l'Oj de La Neuveville"
-
+    simple_form:
+        labels:
+            user:
+                name: "Pseudo"
+                email: "Adresse de couriel"
+                password: "Mot de passse"
+                password_confirmation: "Confirmation du mot de passe"
+                contact:
+                    fName: "Prénom"
+                    lName: "Nom de famille"
+                    fixe: "Téléphone fixe"
+                    natel: "Téléphone mobile"

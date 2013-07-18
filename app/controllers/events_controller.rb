@@ -2,7 +2,9 @@ class EventsController < ApplicationController
 
 load_and_authorize_resource
 
-before_filter :change_event, only:[:edit, :destroy, :update]
+	before_filter :change_event, only:[:edit, :destroy, :update]
+	after_filter :set_back_url
+
 	def index
 		redirect_to event_prog_path(Time.now.utc.year)
 	end
