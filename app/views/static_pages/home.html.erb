@@ -9,30 +9,38 @@
         <%= render 'shared/user_info' %>
       </section>
       <section class="row">
-        <div class="accordion" id="accordion2">
-          <div class="accordion-group">
-            <div class="accordion-heading">
-              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                <%= t "static.home.my_events"%>
-              </a>
-            </div>
-            <div id="collapseOne" class="accordion-body collapse">
-              <div class="accordion-inner">
-                <ul class="unstyled">
-                  <% current_user.events.where('starting_at > ?', Time.now.beginning_of_year).each do |event| %>
-                      <li><%= link_to event.name, event%></li>
-                  <% end %>
-                </ul>
+        <% if current_user.events.count == 0 %>
+            <p>Inscrit à aucune sortie</p>
+        <% else %>
+            <div class="accordion" id="accordion2">
+              <div class="accordion-group">
+                <div class="accordion-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                    <%= t "static.home.my_events"%>
+                  </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse">
+                  <div class="accordion-inner">
+                    <ul class="unstyled">
+                      <% current_user.events.where('starting_at > ?', Time.now.beginning_of_year).each do |event| %>
+                          <li><%= link_to event.name, event%></li>
+                      <%end%>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+        <% end %>
       </section>
     </aside>
     <section class="span8">
       <div class="row">
         <div class="hero-unit info-panel">
+          <% unless @next_event.nil?%>
           <a href="<%= event_path(@next_event) %>"><h3>Prochaine sortie le <%= l(@next_event.starting_at, format: :long)%></h3></a>
+              <%else%>
+          <p>Pas de prochaine sortie</p>
+          <%end%>
 
         </div>
       </div>
