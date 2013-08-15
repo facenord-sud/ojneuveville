@@ -8,14 +8,15 @@
       </h1>
       <br/>
       <p> </p>
-      <h5><%= @user.email if @user.has_role? "admin" or @user.has_role? "organizator"%></h5>
+      <h5><%= @user.email if @user.has_roles? "admin" or @user.has_roles? "organizator"%></h5>
       <%if !@user.contact.nil?%>
       <h5><%= @user.contact.fName%> <%= @user.contact.lName%></h5>
-      <h5><%= t "users.show.fixe"%> <%= @user.contact.fixe || t("no_one")%></h5>
-      <h5><%= t "users.show.natel"%> <%= @user.contact.natel || t("no_one")%></h5>
+      <%if !@user.contact.fixe.nil?%><h5><%= t "users.show.fixe"%> <%= @user.contact.fixe || t("no_one")%></h5> <%end%>
+      <%if !@user.contact.natel.nil?%><h5><%= t "users.show.natel"%> <%= @user.contact.natel || t("no_one")%></h5><%end%>
       <%end%>
     </section>
   </aside>
+  <div class="row">
   <section class="span8">
   	<h3><%= t "users.show.event.text", :event => pluralize(@user.events.size, t("users.show.event.name"))%></h3>
   	<ul>
@@ -24,4 +25,5 @@
   		<%end%>
   	</ul>
   </section>
+</div>
 </div>

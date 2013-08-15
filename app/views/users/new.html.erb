@@ -1,6 +1,23 @@
  <% provide(:title, t("users.new.title")) %>
 <h1><%= t("users.new.title")%></h1>
+<div class="row">
+  <div class="span6 offset3">
 <% provide(:submit, t("users.new.submit"))%>
-<%= render'users/edit'%>
+<%= simple_form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.input :name %>
+
+  <%= f.input :email %>
+
+  <%= f.input :password %>
+
+  <%= f.input :password_confirmation %>
+  
+  <%= f.input :reason, label: t("users.shared.form.reason"), input_html: {rows: 3}%>
+
+  <%= f.submit yield(:submit), class: "btn btn-large btn-primary" %>
+<% end %>
+
 </div>
 </div>

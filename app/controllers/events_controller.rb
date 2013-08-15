@@ -3,7 +3,7 @@ class EventsController < ApplicationController
 load_and_authorize_resource
 
 	before_filter :change_event, only:[:edit, :destroy, :update]
-	after_filter :set_back_url
+	after_filter :set_back_url, only:[:programm, :show, :edit, :new, :destroy]
 
 	def index
 		redirect_to event_prog_path(Time.now.utc.year)
@@ -16,13 +16,16 @@ load_and_authorize_resource
 		@month = get_event_by_date(@date.beginning_of_month, @date.end_of_month)
 		@week = get_event_by_date(@date.beginning_of_week, @date.end_of_week)
 		@day = get_event_by_date(@date.beginning_of_day, @date.end_of_day)
-		@next_event = Event.where("starting_at > ?", Time.now.utc).first
+		@next_event = Event.order('starting_at ASC').where("starting_at > ?", Time.now.utc).first
 	end
 
 	def show
 		@event = Event.find(params[:id])
-		@next_event = Event.where("starting_at > ?", @event.starting_at).first
-		@old_event = Event.where("starting_at < ?", @event.starting_at).last
+		@next_event = Event.order('starting_at ASC').where("starting_at > ?", @event.starting_at).first
+		@old_event = Event.order('starting_at ASC').where("starting_at < ?", @event.starting_at).last
+    @dosable_o = @disable_n = ''
+    @disable_n = 'disabled' if @next_event.nil?
+    @disable_o = 'disabled' if @old_event.nil?
 	end
 
 	def edit
@@ -39,6 +42,7 @@ load_and_authorize_resource
 
 	def create
 		@event = Event.new(params[:event])
+    @event.user = current_user
 		if @event.save
 			flash[:success] = t "events.create.success"
 			redirect_to @event
@@ -59,6 +63,9 @@ load_and_authorize_resource
 
 	def signup
 		event = Event.find(params[:event_id])
+    if out_of_delay? event
+      return
+    end
 		if event.signUp?(current_user)
 			flash[:error] = t "events.signup.error", name: event.name
 			redirect_to events_path
@@ -71,6 +78,9 @@ load_and_authorize_resource
 
 	def signout
 		event = Event.find(params[:event_id])
+    if out_of_delay? event
+      return
+    end
 		event.users.delete(current_user)
 		flash[:success] = t "events.signout.success", name: event.name
 		redirect_to event
@@ -89,4 +99,12 @@ load_and_authorize_resource
 				redirect_to event_prog_path(@event.starting_at.year)
 			end
 		end
+    
+    def out_of_delay?(event)
+      if Time.now >= event.delay
+        flash[:error] = t "events.out_of_delay"
+        redirect_to event
+        true
+      end
+    end
 end

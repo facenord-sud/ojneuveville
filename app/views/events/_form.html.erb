@@ -7,19 +7,17 @@
 
       <%= f.input :description, label: t("events.shared.form.description"), input_html: {rows: "3" } %>
 
-      <%= f.input :starting_at, label: t("events.shared.form.starting_at"), input_html: {class: "input-mini" }%>
+      <%= f.input :starting_at, label: t("events.shared.form.starting_at"), input_html: {class: "input-mini"}%>
 
-      <%= f.input :ending_at, label: t("events.shared.form.ending_at"), input_html: {class: "input-mini" } %>
+      <%= f.input :ending_at, label: t("events.shared.form.ending_at"), input_html: {class: "input-mini"} %>
 
       <%= f.input :place, label: t("events.shared.form.place") %>
-
-      <%= f.input :responsable, label: t("events.shared.form.responsable") %>
 
       <%= f.input :price, label: t("events.shared.form.price"), :wrapper => :append do %>
       <%= f.number_field :price%><span class="add-on">CHF</span>
       <%end%>
 
-      <%= f.input :delay%>
+      <%= f.input :delay, label: t("events.shared.form.delay"), input_html: {class: "input-mini"}%>
 
       <%= f.association :materiaux, as: :check_boxes %>
 

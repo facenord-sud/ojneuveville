@@ -7,11 +7,11 @@
 	</div>
 	<div class="btn-group">
 	  <%= link_to_function(t("events.index.nav.print"), "javascript:window.print()", :class => "btn btn-success") %>
-	  <a class="btn btn-info"><%= t("events.index.nav.pdf")%></a>
+	  <!--<a class="btn btn-info"><%= t("events.index.nav.pdf")%></a>-->
 	</div>
   <div class="btn-group">
-    <%= link_to t("events.index.nav.next_event"), @next_event, :class => "btn btn-info" %>
-    <%= link_to t("events.index.nav.new"), new_event_path, :class => "btn btn-success" %>
+    <%if can?(:read, Event) and !@next_event.nil?%><%= link_to t("events.index.nav.next_event"), @next_event, :class => "btn btn-info" %><%end%>
+    <%if can? :create, Event%><%= link_to t("events.index.nav.new"), new_event_path, :class => "btn btn-success" %><%end%>
   </div>
 </div>
 <p></p>

@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   def check_user
     if signed_in?
       user = current_user
-      if (user.has_role? "organizator" or user.has_role? "admin") and user.contact.nil?
+      if (user.has_roles? "organizator" or user.has_roles? "admin") and user.contact.nil?
         flash[:warning] = t "complete", :href =>edit_user_path(user)
       end
     end
@@ -30,7 +30,7 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
-  # Force signout to prevent CSRF attacks
+  # Force sign out to prevent CSRF attacks
   def handle_unverified_request
     sign_out
     super

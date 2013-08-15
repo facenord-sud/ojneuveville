@@ -7,36 +7,33 @@ class Ability
       can :create, User
       can :index, Event
       can :programm, Event
-      return
-    elsif user.roles.empty?
-      if User.count == 1
+    else
+      if user.roles_are_empty?
+        can :index, Event
+        can :programm, Event
+      end
+      if user.has_roles? 'super-admin'
         can :manage, :all
       end
-      can :index, Event
-      can :update, User
-      can :read, User
-      can :programm, Event
-    else
-      user.roles.each do |role|
-        role.permissions.each do |permission|
-          if !permission.un_constantize
-            sec_param = permission.subject_class.constantize
-          else
-            sec_param = permission.subject_class.to_sym
-          end
-          if permission.subject_id.nil?
-            can permission.action.to_sym, sec_param
-          elsif permission.all
-            can permission.action.to_sym, :all
-          elsif !permission.more.nil?
-            can permission.action.to_sym, sec_param
-          elsif permission.subject_class.nil?
-            can permission.action.to_sym
-          else
-            can permission.action.to_sym, sec_param, :id => permission.subject_id
-          end
-        end
+      if user.has_roles? 'ojien'
+         ojien user
+      end
+      if user.has_roles? 'admin'
+        can :dashboard
+        can :access, :rails_admin
+        can :manage, User
+        ojien user
       end
     end
+  end
+
+  def ojien user
+    can :manage, User, id: user.id
+    can :show, User
+    can :programm, Event
+    can :read, Event
+    can :signup, Event
+    can :signout, Event
+    can :signin, Event
   end
 end

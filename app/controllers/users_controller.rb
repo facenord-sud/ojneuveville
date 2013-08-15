@@ -30,7 +30,7 @@ load_and_authorize_resource
   end
 
   def edit
-    if @user.contact.nil? and (@user.has_role? "admin" or @user.has_role? "organizator")
+    if @user.contact.nil? and (@user.has_roles? "admin" or @user.has_roles? "organizator")
       @contact = @user.build_contact
     end
   end

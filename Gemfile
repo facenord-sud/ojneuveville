@@ -15,6 +15,7 @@ gem 'rails_admin'
 gem 'rails_admin-i18n'
 gem 'date_validator'
 gem 'simple_form'
+gem 'bootstrap-datetimepicker-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

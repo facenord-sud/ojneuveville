@@ -4,6 +4,7 @@ class StaticPagesController < ApplicationController
 	after_filter :set_back_url
 
   def home
+    @next_event = Event.order('starting_at ASC').where("starting_at > ?", Time.now.utc).first
   end
   
   def help

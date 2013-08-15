@@ -1,6 +1,6 @@
 fr:
-    home: "Page d'accueil"
-    greetings: "Bienvenue à l'oj"
+    home: "Club Alpin de La Neuveville"
+    greetings: "Bienvenue à l'oj !"
     app_name: "Oj La Neuveville"
     access_denied: "Accès refusé"
     confirm: "Etes-vous certain ?"
@@ -46,7 +46,8 @@ fr:
                 email: "Adresse de courriel"
                 password: "Mot de passe"
             new_user: "Nouvel utilisateur ? "
-            sign_up: "Enregistrez-vous maintenant !"
+            sign_up: "Inscris-toi maintenant"
+            sign_in: "Connexion"
         create:
             error: "L'adresse de courriel ou le mot de passe est invalide"
     shared:
@@ -56,6 +57,23 @@ fr:
         user_info:
             profile: "Voir mon profil"
     static:
+        home:
+            h3:
+                text: Organisation de jeunesse
+                p: |
+                    Fondé en 2000, le groupe « Jeunesse » est autonome au sein de la Section. Il est dirigé par le chef OJ, Monsieur Pascal Burnand, guide de montagne. Le chef OJ est secondé par une équipe de moniteurs.
+            h4:
+                activite:
+                    text: "Activités :"
+                    list: |
+                        Escalade
+                        Alpinisme
+                        Entraînement en salle l'hiver
+                        Ski de randonné
+                        Plusieurs camps par année où l'on pratique toutes ces activités
+                galerie:
+                    text: Reflets de L'OJ
+            my_events: Mes sorties
         about:
             title: "A propos de nous"
             text: "Ce site est un projet pour aider à l'organistion de l'oj de La Neuveville. Il a été réalisé dans le cadre d'un projet pour l'"
@@ -81,6 +99,7 @@ fr:
                 email: "Adresse de courriel"
                 password: "Mot de passe"
                 password_confirmation: "Confirmation du mot de passe"
+                reason: "Raison de ton inscription. Nom et prénom sont suffisants, mais une courte déscription est bienvevnue"
         edit:
             title: "Mettre à jour votre profil"
             change: "changer"
@@ -106,6 +125,7 @@ fr:
             natel: "Téléphone mobile : "
 
     events:
+        out_of_delay: "Le délai de déinscription/inscription est passé. Si tu veux vraiment, arrenge-toi avec l'organisateur de la sortie"
         error:
             past: "Vous ne pouvez pas modifier un événemnt passé"
         shared:
@@ -117,6 +137,7 @@ fr:
                 place: "Lieu"
                 responsable: "Responsable"
                 price: "Prix"
+                delay: "Délai d'inscription"
             programm:
                 thead:
                     name: "Sortie"

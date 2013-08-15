@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130629094546) do
+ActiveRecord::Schema.define(:version => 20130813090125) do
 
   create_table "contacts", :force => true do |t|
     t.string   "fName"
@@ -40,11 +40,13 @@ ActiveRecord::Schema.define(:version => 20130629094546) do
     t.datetime "ending_at"
     t.string   "place"
     t.datetime "delay"
-    t.string   "responsable"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.integer  "price",       :default => 10
+    t.integer  "user_id"
   end
+
+  add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
   create_table "events_materiaux", :id => false, :force => true do |t|
     t.integer "event_id"
@@ -123,6 +125,8 @@ ActiveRecord::Schema.define(:version => 20130629094546) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.integer  "contact_id"
+    t.text     "reason"
+    t.integer  "bit_mask"
   end
 
   add_index "users", ["contact_id"], :name => "index_users_on_contact_id"

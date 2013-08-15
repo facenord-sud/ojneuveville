@@ -1,4 +1,3 @@
-# -*- encoding : utf-8 -*-
 # == Schema Information
 #
 # Table name: roles
@@ -8,8 +7,10 @@
 #  description :text(255)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  nick_name   :string(255)
 #
 
+# -*- encoding : utf-8 -*-
 # -*- encoding : utf-8 -*-
 class Role < ActiveRecord::Base
   attr_accessible :description, :name, :permission_ids, :nick_name

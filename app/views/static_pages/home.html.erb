@@ -1,11 +1,44 @@
 <% if signed_in? %>
+    <div class="push-header">
+        <%= image_tag 'welcome.jpg' %>
+    </div>
+    <div class="container">
   <div class="row">
     <aside class="span4">
-      <section>
+      <section class="row">
         <%= render 'shared/user_info' %>
       </section>
+      <section class="row">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <div class="accordion-heading">
+              <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                <%= t "static.home.my_events"%>
+              </a>
+            </div>
+            <div id="collapseOne" class="accordion-body collapse">
+              <div class="accordion-inner">
+                <ul class="unstyled">
+                  <% current_user.events.where('starting_at > ?', Time.now.beginning_of_year).each do |event| %>
+                      <li><%= link_to event.name, event%></li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </aside>
+    <section class="span8">
+      <div class="row">
+        <div class="hero-unit info-panel">
+          <a href="<%= event_path(@next_event) %>"><h3>Prochaine sortie le <%= l(@next_event.starting_at, format: :long)%></h3></a>
+
+        </div>
+      </div>
+    </section>
   </div>
+    </div>
 <% else %>
   <div class="center hero-unit">
     <h1><%= t :home %></h1>
@@ -15,6 +48,61 @@
     </h2>
 
     <%= link_to t("sessions.new.sign_up"), signup_path, 
-                                class: "btn btn-large btn-primary" %>
+                                class: "btn btn-large btn-success" %>
+	<%= link_to t("sessions.new.sign_in"), signin_path, 
+								class: "btn btn-large btn-primary" %>
+  </div>
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <%= image_tag 'welcome.jpg'%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <h3>
+            <%= t('static.home.h3.text') %>
+          </h3>
+          <%= simple_format t('static.home.h3.p')%>
+
+          <h4>
+            <%= t('static.home.h4.activite.text') %>
+          </h4>
+          <ul>
+            <% t('static.home.h4.activite.list').each_line do |point| %>
+                <li><%= point %></li>
+            <% end %>
+          </ul>
+      </div>
+    </div>
   </div>
 <% end %>
+
+<div class="row center">
+  <div class="span2"><p></p></div>
+  <div class="span8 center">
+    <h4>
+      <%= t('static.home.h4.galerie.text') %>
+    </h4>
+    <div id="myCarousel" class="center-carousel carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        <div class="active item">
+          <%= image_tag 'reflets/wei0802.jpg' %>
+        </div>
+        <div class="item">
+          <%= image_tag 'reflets/mou0804.jpg' %>
+        </div>
+        <div class="item">
+          <%= image_tag 'reflets/ran0803.jpg' %>
+        </div>
+        <div class="item">
+          <%= image_tag 'reflets/ran0805.jpg' %>
+        </div>
+      </div>
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div></div>
+  <div class="span2"><p></p></div>
+</div>

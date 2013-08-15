@@ -12,6 +12,20 @@ $grayMediumLight: #eaeaea;
 
 /* universal */
 
+.push-header {
+  margin-bottom: 50px;
+}
+
+.info-panel {
+  background-color: #e2fff1;
+}
+
+.carousel-inner>.item>img {
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 320px;
+}
+
 html {
   overflow-y: scroll;
 }
