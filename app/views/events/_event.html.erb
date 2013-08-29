@@ -19,5 +19,5 @@
 	<td><%= print_dates(event) %></td>
 	<%if can? :read, Event%><td><%= event.place%></td><% end%>
 	<td><%= event.price%>.-</td>
-	<%if can? :read, Event%><td><%= link_to event.user.name, event.user%></td><% end%>
+	<%if can? :read, Event%><td><%= print_responsable event%></td><% end%>
 </tr>

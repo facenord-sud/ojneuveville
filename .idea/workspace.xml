@@ -15,7 +15,6 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/roles/index.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/roles/new.html.erb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/app/views/users/admin.html.erb" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db/migrate/20130718143651_remove_responsable_to_events.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/controllers/events_controller_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/controllers/materiaux_controller_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/controllers/roles_controller_spec.rb" afterPath="" />
@@ -33,19 +32,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/views/roles/index.html.erb_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/views/roles/new.html.erb_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/views/roles/show.html.erb_spec.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/events/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/events/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/event.rb" afterPath="$PROJECT_DIR$/app/models/event.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/events_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/events_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" afterPath="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/events/show.html.erb" afterPath="$PROJECT_DIR$/app/views/events/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/simple_form_bootstrap.rb" afterPath="$PROJECT_DIR$/config/initializers/simple_form_bootstrap.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/todo.rb" afterPath="$PROJECT_DIR$/todo.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/events/_event.html.erb" afterPath="$PROJECT_DIR$/app/views/events/_event.html.erb" />
     </list>
     <ignored path="sample_app_2nd_ed-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,6 +59,7 @@
     <file path="/20130718143651_remove_responsable_to_events.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377770020098" ignored="false" />
     <file path="/_form.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377774057145" ignored="false" />
     <file path="/events_helper.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377772507294" ignored="false" />
+    <file path="/_event.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377775005903" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,16 +105,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/events/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="96" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.5970696">
+            <state line="22" column="96" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-12.538462">
               <folding>
                 <element signature="e#361#396#0" expanded="true" />
                 <element signature="e#473#506#0" expanded="true" />
                 <element signature="e#753#782#0" expanded="true" />
                 <element signature="e#864#885#0" expanded="true" />
                 <element signature="e#945#974#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_event.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/events/_event.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="22" column="46" selection-start="683" selection-end="683" vertical-scroll-proportion="0.21978022">
+              <folding>
+                <element signature="tag#tr#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -177,17 +176,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/events/new.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="32" selection-start="151" selection-end="165" vertical-scroll-proportion="-2.3076923">
-              <folding>
-                <element signature="e#18#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="show.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/events/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -222,7 +210,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/locales/fr/fr.yml" />
         <option value="$PROJECT_DIR$/app/controllers/static_pages_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/events/programm.html.erb" />
         <option value="$PROJECT_DIR$/todo.rb" />
@@ -238,6 +225,7 @@
         <option value="$PROJECT_DIR$/app/views/events/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
         <option value="$PROJECT_DIR$/app/views/events/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/events/_event.html.erb" />
       </list>
     </option>
   </component>
@@ -1447,13 +1435,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/cucumber.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/bb602cd8/94661ebd-c12a-4b03-a88d-11310b7d334a/..users">
       <provider editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -1569,13 +1550,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="96" selection-start="1008" selection-end="1008" vertical-scroll-proportion="0.5970696">
+        <state line="22" column="96" selection-start="1008" selection-end="1008" vertical-scroll-proportion="-12.538462">
           <folding>
             <element signature="e#361#396#0" expanded="true" />
             <element signature="e#473#506#0" expanded="true" />
             <element signature="e#753#782#0" expanded="true" />
             <element signature="e#864#885#0" expanded="true" />
             <element signature="e#945#974#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/events/_event.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="46" selection-start="683" selection-end="683" vertical-scroll-proportion="0.21978022">
+          <folding>
+            <element signature="tag#tr#0" expanded="true" />
           </folding>
         </state>
       </provider>
