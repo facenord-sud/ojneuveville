@@ -94,7 +94,7 @@ load_and_authorize_resource
 
 		def change_event
 			@event = Event.find(params[:id])
-			if @event.starting_at.past?
+			if @event.starting_at<@event.starting_at-6.months
 				flash[:error] = t "events.error.past"
 				redirect_to event_prog_path(@event.starting_at.year)
 			end
