@@ -42,7 +42,7 @@ load_and_authorize_resource
 
 	def create
 		@event = Event.new(params[:event])
-    @event.user = current_user
+    @event.user = current_user if @event.user.nil? and @event.responsable.empty?
 		if @event.save
 			flash[:success] = t "events.create.success"
 			redirect_to @event

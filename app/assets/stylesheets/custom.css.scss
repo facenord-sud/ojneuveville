@@ -2,6 +2,24 @@
 
 /* mixins, variables, etc. */
 
+$red-inline: #B94A48;
+
+.control-group {
+  clear: both;
+}
+
+.error .controls .help-inline{
+  color: $red-inline;
+}
+
+.error .control-label {
+  color: $red-inline;
+}
+
+.error .controls select{
+  border: 1px solid #B94A48;
+}
+
 $grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
@@ -11,6 +29,7 @@ $grayMediumLight: #eaeaea;
 }
 
 /* universal */
+
 
 .push-header {
   margin-bottom: 50px;

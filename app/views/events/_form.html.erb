@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="span6 offset3">
+  <div class="span7 offset3">
     <%= simple_form_for @event do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
@@ -7,17 +7,20 @@
 
       <%= f.input :description, label: t("events.shared.form.description"), input_html: {rows: "3" } %>
 
-      <%= f.input :starting_at, label: t("events.shared.form.starting_at"), input_html: {class: "input-mini"}%>
+      <%= f.input :starting_at, label: t("events.shared.form.starting_at"), input_html: {class: "input-small"}%>
 
-      <%= f.input :ending_at, label: t("events.shared.form.ending_at"), input_html: {class: "input-mini"} %>
+      <%= f.input :ending_at, label: t("events.shared.form.ending_at"), input_html: {class: "input-small"} %>
 
       <%= f.input :place, label: t("events.shared.form.place") %>
 
+      <%= f.association :user, :wrapper =>"span3"%>
+      <%= f.input :responsable, :wrapper =>"span3"%>
+
       <%= f.input :price, label: t("events.shared.form.price"), :wrapper => :append do %>
-      <%= f.number_field :price%><span class="add-on">CHF</span>
+      <%= f.number_field :price%><span class="add-on" style="height: 30px;">CHF</span>
       <%end%>
 
-      <%= f.input :delay, label: t("events.shared.form.delay"), input_html: {class: "input-mini"}%>
+      <%= f.input :delay, label: t("events.shared.form.delay"), input_html: {class: "input-small"}%>
 
       <%= f.association :materiaux, as: :check_boxes %>
 

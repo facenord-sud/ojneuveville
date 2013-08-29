@@ -16,18 +16,18 @@
 #
 
 class Event < ActiveRecord::Base
-  attr_accessible :delay, :description, :ending_at, :name, :place, :responsable, :starting_at, :price, :user_ids, :material_ids
+  attr_accessible :delay, :description, :ending_at, :name, :place, :responsable, :starting_at, :price, :user_ids, :material_ids, :user_id
   
   has_and_belongs_to_many :users
   has_and_belongs_to_many :materiaux
   belongs_to :user
 
-  validates :name, presence: true, length: { maximum: 30}
+  validates :name, presence: true, length: { maximum: 200}
   validates :description, presence: true
   validates :place, presence: true
   validates :price, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 0}
   validates :starting_at,
-          :date => {:after => Proc.new { Time.now }}
+          :date => {:after => Proc.new { 6.months.ago }}
   validates :ending_at,
   			date: {
   				after: :starting_at
@@ -40,5 +40,5 @@ class Event < ActiveRecord::Base
 
  	def signUp?(user)
  		users.find_by_id(user)
- 	end
+  end
 end

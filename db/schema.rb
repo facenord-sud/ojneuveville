@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130813090125) do
     t.datetime "ending_at"
     t.string   "place"
     t.datetime "delay"
+    t.string   "responsable"
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
     t.integer  "price",       :default => 10

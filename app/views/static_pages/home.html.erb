@@ -9,7 +9,7 @@
         <%= render 'shared/user_info' %>
       </section>
       <section class="row">
-        <% if current_user.events.count == 0 %>
+        <% if current_user.events.where('starting_at > ?', Time.now.beginning_of_year).count == 0 %>
             <p>Inscrit à aucune sortie</p>
         <% else %>
             <div class="accordion" id="accordion2">
@@ -33,7 +33,7 @@
         <% end %>
       </section>
     </aside>
-    <section class="span8">
+    <section class="span6">
       <div class="row">
         <div class="hero-unit info-panel">
           <% unless @next_event.nil?%>

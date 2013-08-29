@@ -22,7 +22,7 @@
 	<p><%= @event.description%></p>
 	<p><strong><%= t "events.show.price"%></strong><%= @event.price%>.-</p>
 	<p><strong><%= t "events.show.place"%></strong><%= @event.place%></p>
-	<p><strong><%= t "events.show.responsable"%></strong><%= link_to @event.user.name, @event.user%></p>
+	<p><strong><%= t "events.show.responsable"%></strong><%= print_responsable @event%></p>
 	<p><strong><%= t "events.show.material"%></strong>
 		<% if @event.materiaux.empty? %>
 			<%= t "events.show.no_material"%>

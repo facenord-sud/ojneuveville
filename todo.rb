@@ -1,5 +1,6 @@
 #1: FAIT: Pouvoir modifier les rôles d'un utilisateur dans rails admin 1
 #2: FAIT: Faire une page d'accueil pour connecté/non-connecté 1
+#3: TODO: Délai d'inscription!!! afficher également
 #3: TODO: Faire une page de profil 1
 #4: TODO: Faire une page pour voir toutes les adresses mails suivant les rôles 1
 #5: TODO: Tester le rôle admin 1
