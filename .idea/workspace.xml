@@ -32,11 +32,12 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/views/roles/index.html.erb_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/views/roles/new.html.erb_spec.rb" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/spec/views/roles/show.html.erb_spec.rb" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/events_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/events_helper.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/fr/fr.yml" afterPath="$PROJECT_DIR$/config/locales/fr/fr.yml" />
     </list>
     <ignored path="sample_app_2nd_ed-master.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377769629983" ignored="false" />
+    <file path="/Dummy.txt" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377776602304" ignored="false" />
     <file path="/contacts_controller.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1374149661369" ignored="false" />
     <file path="/programm.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1376347641263" ignored="false" />
     <file path="/seeds.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1376388500102" ignored="false" />
@@ -58,8 +59,9 @@
     <file path="/event.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377772424844" ignored="false" />
     <file path="/20130718143651_remove_responsable_to_events.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377770020098" ignored="false" />
     <file path="/_form.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377774057145" ignored="false" />
-    <file path="/events_helper.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377772507294" ignored="false" />
+    <file path="/events_helper.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377776571102" ignored="false" />
     <file path="/_event.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377775005903" ignored="false" />
+    <file path="/temp.yml" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1377776611568" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,13 +95,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="events_helper.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="events_helper.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/helpers/events_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="52" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
+            <state line="5" column="30" selection-start="197" selection-end="197" vertical-scroll-proportion="0.10084034">
               <folding>
-                <element signature="e#21#165#0" expanded="true" />
-                <element signature="e#169#288#0" expanded="true" />
+                <element signature="e#169#396#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -131,10 +132,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="events_controller.rb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="events_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="95" column="40" selection-start="2490" selection-end="2490" vertical-scroll-proportion="0.6853147">
+            <state line="98" column="105" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#1139#1152#0" expanded="true" />
                 <element signature="e#1155#1314#0" expanded="true" />
@@ -148,33 +149,6 @@
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state line="31" column="0" selection-start="431" selection-end="431" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_variables.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p0/gems/bootstrap-sass-2.1.0.0/vendor/assets/stylesheets/bootstrap/_variables.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_type.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p0/gems/bootstrap-sass-2.1.0.0/vendor/assets/stylesheets/bootstrap/_type.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_wells.scss" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/.rvm/gems/ruby-2.0.0-p0/gems/bootstrap-sass-2.1.0.0/vendor/assets/stylesheets/bootstrap/_wells.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -224,12 +198,12 @@
         <option value="$PROJECT_DIR$/app/views/static_pages/home.html.erb" />
         <option value="$PROJECT_DIR$/config/initializers/simple_form_bootstrap.rb" />
         <option value="$PROJECT_DIR$/app/models/event.rb" />
-        <option value="$PROJECT_DIR$/app/helpers/events_helper.rb" />
         <option value="$PROJECT_DIR$/app/views/events/show.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/custom.css.scss" />
         <option value="$PROJECT_DIR$/app/views/events/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/events/_event.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/events_controller.rb" />
+        <option value="$PROJECT_DIR$/app/helpers/events_helper.rb" />
       </list>
     </option>
   </component>
@@ -843,18 +817,19 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="Database.TableEditor.Splitter" value="0.9" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="reference.settings.ide.settings.spelling" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="reference.settings.ide.settings.spelling" />
     <property name="last_opened_file_path" value="$USER_HOME$/dico" />
-    <property name="FullScreen" value="false" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
+    <property name="org.jetbrains.plugins.ruby.i18n.inspection.quickfixes.I18nCreatePropertyDialog" value="fr/fr.yml" />
+    <property name="Database.TableEditor.Splitter" value="0.9" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="FullScreen" value="false" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="IRB console.Rails console: sample_app_2nd_ed-master">
     <configuration default="false" name="db:migrate" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -1359,7 +1334,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1680" height="1024" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32938644" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1369,7 +1344,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39935413" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3279396" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1509,16 +1484,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/helpers/events_helper.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="52" selection-start="196" selection-end="196" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#21#165#0" expanded="true" />
-            <element signature="e#169#288#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="71" selection-start="1171" selection-end="1171" vertical-scroll-proportion="-4.6153846">
@@ -1581,11 +1546,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/events_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="95" column="40" selection-start="2490" selection-end="2490" vertical-scroll-proportion="0.6853147">
+        <state line="98" column="105" selection-start="2642" selection-end="2642" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1139#1152#0" expanded="true" />
             <element signature="e#1155#1314#0" expanded="true" />
             <element signature="e#1317#1564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helpers/events_helper.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="30" selection-start="197" selection-end="197" vertical-scroll-proportion="0.10084034">
+          <folding>
+            <element signature="e#169#396#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -191,6 +191,8 @@ fr:
             error: "Vous êtes déjà inscris à '%{name}'"
         signout:
             success: "Vous vous êtes déinscrit de '%{name}'"
+        helper:
+          no_responsable: "Aucun responsable..."
     errors:
         messages:
             not_a_date: "n'est pas une date"
