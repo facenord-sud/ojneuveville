@@ -1,0 +1,58 @@
+<h3>Toutes les adresses mails</h3>
+
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Tous les membres du site
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <ul class="unstyled">
+          <% @all_mails.each do |user| %>
+              <li><strong><%= user.name %><strong> : <%= mail_to user.email%></li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion" id="accordion3">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse2">
+        Tous les ojiens
+      </a>
+    </div>
+    <div id="collapse2" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <ul class="unstyled">
+          <% @all_ojiens.each do |user| %>
+              <li><strong><%= user.name %><strong> : <%= mail_to user.email%></li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="accordion" id="accordion4">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapse3">
+        Tous les responsables
+      </a>
+    </div>
+    <div id="collapse3" class="accordion-body collapse">
+      <div class="accordion-inner">
+        <ul class="unstyled">
+          <% @all_admins.each do |user| %>
+              <li><strong><%= user.contact.f_name || user.name %><strong> : <%= mail_to user.email%></li>
+          <%end%>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

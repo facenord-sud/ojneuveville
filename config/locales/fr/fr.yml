@@ -120,10 +120,21 @@ fr:
         show:
             event:
                 name: "sortie"
-                text: "Inscrit à %{event}"
+                text: "Cette année, vous participez à %{event}"
+                no_inscription: "Cette année, vous ne participez à aucune sortie. %{anchor}"
+                participe: "Participez !"
+            next_event: "Vous participez à une sortie dans %{date}"
             fixe: "Téléphone fixe : "
             natel: "Téléphone mobile : "
-
+            add_contact: "Ajouter des %{info_contact}. Elles seront visibles par %{all}"
+            warn_public:
+            info_contact: informations de contact
+            all: tous
+            change_profil: "Modifier mon profil"
+            name: "Nom : "
+            email: "Adresse email : "
+        delete_contact:
+          notice: "Informations de contact supprimés"
     events:
         out_of_delay: "Le délai de déinscription/inscription est passé. Si tu veux vraiment, arrenge-toi avec l'organisateur de la sortie"
         error:
@@ -186,6 +197,7 @@ fr:
             signout: "Désinscription"
             update: "Modifier"
             destroy: "Supprimer"
+            delay: "Délai d'inscription : "
         signup:
             success: "Vous participez à la sortie '%{name}'"
             error: "Vous êtes déjà inscris à '%{name}'"

@@ -17,6 +17,6 @@ class Contact < ActiveRecord::Base
 
   belongs_to :user
 
-  #validates :fName, presence: true
-  #validates :lName, presence: true
+  validates :fName, presence: true
+  validates :lName, presence: true
 end

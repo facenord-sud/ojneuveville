@@ -3,8 +3,8 @@ class CreateContacts < ActiveRecord::Migration
     create_table :contacts do |t|
       t.string :fName
       t.string :lName
-      t.integer :fixe
-      t.integer :natel
+      t.string :fixe
+      t.string :natel
       t.integer :user_id
 
       t.timestamps

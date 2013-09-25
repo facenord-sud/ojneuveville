@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   before_save { email.downcase! }
   before_save :create_remember_token
-  has_and_belongs_to_many :events
+  has_and_belongs_to_many :events, order: 'starting_at ASC'
   has_one :contact, inverse_of: :user
   accepts_nested_attributes_for :contact
 

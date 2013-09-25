@@ -17,7 +17,10 @@ OjNeuveville::Application.routes.draw do
     match '/desinscription',  to: 'events#signout', as: "signout"
   end
 
-  resources :users, only: [:new, :create, :update, :show, :index, :edit], path: "membres"    
+  resources :users, only: [:new, :create, :update, :show, :index, :edit], path: "membres" do
+    delete 'supprimer-contact', action: :delete_contact, as: 'delete_contact'
+    get 'toutes-les-adresses-email', action: :all_email, on: :collection, as: 'all_email'
+end
   
   resources :sessions, only: [:new, :create, :destroy]
 

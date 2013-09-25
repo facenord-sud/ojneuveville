@@ -36,7 +36,9 @@ $grayMediumLight: #eaeaea;
 }
 
 .info-panel {
-  background-color: #e2fff1;
+  background-image: image-url('post-it.jpg');
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .carousel-inner>.item>img {
