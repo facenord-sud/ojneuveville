@@ -5,7 +5,7 @@ ActionMailer::Base.smtp_settings = {
   :user_name            => "facenord.sud@gmail.com",  
   :password             => "montagne.12",  
   :authentication       => "plain",  
-  :enable_starttls_auto => true  
+  :enable_starttls_auto => true
 }
 
 ActionMailer::Base.default_url_options[:host] = "oj-laneuveville.herokuapp.com"
