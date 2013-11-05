@@ -4,20 +4,20 @@
     <section>
       <h1>
         <%= gravatar_for @user %>
-        <%= @user.name %>
+        <%= @user.display_name %>
       </h1>
       <%= link_to t('users.show.change_profil'), edit_user_path(@user), class: 'btn btn-primary' if @user == current_user%>
       <br/>
       <p> </p>
-      <p><strong><%= t('users.show.email') %></strong><%= @user.email if @user.has_roles? "admin" or @user.has_roles? "organizator" or @user==current_user or current_user.has_roles? 'admin' or current_user.has_roles? 'organizator' %></p>
+      <p><strong><%= t('users.show.email') %></strong><%= @user.email %></p>
       <%if !@user.contact.nil?%>
           <p><strong><%= t('users.show.name') %></strong><%= @user.contact.fName%> <%= @user.contact.lName%></p>
           <p><strong><%= t "users.show.fixe"%></strong><%= @user.contact.fixe || t("no_one")%></p>
           <p><strong><%= t "users.show.natel"%></strong><%= @user.contact.natel || t("no_one")%></p>
-          <p><%= link_to 'Supprimer les infos de contact', user_delete_contact_path(@user),
-                         method: :delete, confirm: t('confirm'), class: 'btn btn-danger'%></p>
+          <%if can? :delete_contact, User and @user == current_user%><p><%= link_to 'Supprimer les infos de contact', user_delete_contact_path(@user),
+                         method: :delete, confirm: t('confirm'), class: 'btn btn-danger'%></p><%end%>
       <% else %>
-       <p><%= raw t('users.show.add_contact', {info_contact: link_to(t('users.show.info_contact'), edit_user_path(more: true)), all: link_to(t('users.show.all'), users_path)}) %></p>
+       <p><%= raw t('users.show.add_contact', {info_contact: link_to(t('users.show.info_contact'), edit_user_path(more: true)), all: link_to(t('users.show.all'), users_path)}) if @user == current_user%></p>
       <%end%>
     </section>
   </aside>
@@ -31,14 +31,26 @@
     </div>
       <div class="row">
         <% if @user.events.size>0%>
-            <h3><%= t "users.show.event.text", :event => pluralize(@user.events.size, t("users.show.event.name"))%></h3>
+            <h3>
+              <%if @user == current_user%>
+                <%= t "users.show.event.text_y", :event => pluralize(@user.events.size, t("users.show.event.name"))%>
+              <%else%>
+                  <%= t "users.show.event.text_h", :event => pluralize(@user.events.size, t("users.show.event.name")), name: @user.display_name%>
+              <%end%>
+            </h3>
             <ul>
                 <% @user.events.each do |event|%>
                     <li><%= link_to event.name, event%></li>
                 <%end%>
             </ul>
         <%else%>
-            <h3><%= raw t('users.show.event.no_inscription', anchor: link_to(t('users.show.event.participe'), events_path)) %></h3>
+            <h3>
+              <%if @user == current_user%>
+                <%= raw t('users.show.event.no_inscription', anchor: link_to(t('users.show.event.participe'), events_path)) %>
+              <%else%>
+                  <%= raw t('users.show.event.no_inscription_h', anchor: link_to(t('users.show.event.participe'), events_path), name: @user.display_name) %>
+              <%end%>
+            </h3>
         <% end %>
       </div>
   </div>

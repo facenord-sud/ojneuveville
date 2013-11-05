@@ -13,7 +13,7 @@
 #
 
 class Contact < ActiveRecord::Base
-  attr_accessible :fName, :fixe, :lName, :natel
+  attr_accessible :fName, :fixe, :lName, :natel, :user_id
 
   belongs_to :user
 

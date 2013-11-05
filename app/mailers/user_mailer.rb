@@ -14,9 +14,9 @@ class UserMailer < ActionMailer::Base
 
   def registration_admin(user)
   	@user = user
-  	admin = Role.find_by_nick_name("admin")
+    admin = User.all.reject {|a_user| a_user.email unless a_user.has_roles? 'super-admin'}
     mail(
-    :to =>  admin.users.map(&:email),
+    :to =>  admin.map(&:email),
     :subject => "Un nouveau membre s'est inscrit à l'Oj de la Neuveville",
     :from => "Oj de La Neuveville <facenord.sud@gmail.com>"
     )

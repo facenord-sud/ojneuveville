@@ -57,6 +57,23 @@
 	    </div>
 	  </div>
 	</div>
+      <!-- Liste d'email des participants -->
+      <div class="accordion" id="accordion3">
+        <div class="accordion-group">
+          <div class="accordion-heading">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+              <%= t "events.show.list_users_email"%>
+            </a>
+          </div>
+          <div id="collapseTwo" class="accordion-body collapse">
+            <div class="accordion-inner">
+                <% @event.users.each do |user| %>
+                  <%= user.display_name %><<%= mail_to user.email%>>,
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
 	<% end%>
 	<%if can? :signin, Event%>
 	<% if  @event.signUp?(current_user).nil?%>

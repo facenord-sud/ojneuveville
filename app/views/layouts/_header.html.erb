@@ -9,22 +9,25 @@
               <%= link_to t("header.event.title"), events_path%>
             </li>
           <% if signed_in? %>
+              <li id="fat-menu" class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= t("header.admin.title")%><b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <%= link_to t("header.blog.title_connected"), events_path%>
+                  </li>
+                  <li>
+                    <%= link_to t("header.admin.users"), users_path%>
+                  </li>
+                  <li>
+                    <%= link_to t("header.admin.email"), all_email_users_path%>
+                  </li>
+                </ul>
+              </li>
             <% if can? :access, :rails_admin%>
-            <li id="fat-menu" class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= t("header.admin.title")%><b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li>
-                  <%= link_to t("header.admin.dashboard"), rails_admin.dashboard_path%>
-                </li>
-                <li>
-                  <%= link_to t("header.admin.users"), users_path%>
-                </li>
-                <li>
-                  <%= link_to t("header.admin.email"), rails_admin.dashboard_path%>
-                </li>
-              </ul>
-            </li>
+                  <li id="fat-menu" class="dropdown">
+                    <%= link_to t("header.admin.dashboard"), rails_admin.dashboard_path%>
+                  </li>
             <% end %>
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <%= t("header.account.title")%><b class="caret"></b>
@@ -39,7 +42,10 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to t("header.signin"), signin_path %></li>
+              <li id="fat-menu" class="dropdown">
+                <%= link_to t("header.blog.title"), events_path%>
+              </li>
+              <li><%= link_to t("header.signin"), signin_path %></li>
           <% end %>
         </ul>
       </nav>

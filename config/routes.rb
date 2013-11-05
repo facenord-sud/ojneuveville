@@ -7,14 +7,14 @@ OjNeuveville::Application.routes.draw do
 
   resources :materiaux, path: "materiel"
 
-
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+
   root to: 'static_pages#home'
 
   resources :events, path: "sorties" do
-    match '/programme',  to: 'events#programm', as: "prog"
-    match '/inscription',  to: 'events#signup', as: "signup"
-    match '/desinscription',  to: 'events#signout', as: "signout"
+    get '/programme',  to: 'events#programm', as: "prog"
+    get '/inscription',  to: 'events#signup', as: "signup"
+    get '/desinscription',  to: 'events#signout', as: "signout"
   end
 
   resources :users, only: [:new, :create, :update, :show, :index, :edit], path: "membres" do
@@ -26,13 +26,14 @@ end
 
   resources :roles, only: [:show]
 
-  match '/nouvelle-inscription',  to: 'users#new', as: "signup"
-  match '/connexion',  to: 'sessions#new', as: "signin"
-  match '/deconnexion', to: 'sessions#destroy', via: :delete, as: "signout"
+  get '/nouvelle-inscription',  to: 'users#new', as: "signup"
+  get '/connexion',  to: 'sessions#new', as: "signin"
+  delete '/deconnexion', to: 'sessions#destroy', via: :delete, as: "signout"
         
-  match '/aide',    to: 'static_pages#help', as: "help"
-  match '/a-propos',   to: 'static_pages#about', as: "about"
-  match '/nous-contacter', to: 'static_pages#contact', as: "contact"
+  get '/aide',    to: 'static_pages#help', as: "help"
+  get '/a-propos',   to: 'static_pages#about', as: "about"
+  get '/nous-contacter', to: 'static_pages#contact', as: "contact"
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -6,13 +6,13 @@ fr:
     confirm: "Etes-vous certain ?"
     du: "du"
     au: "au"
-    complete: "Vous êtes administrateur ou organisateur pour ce site, compléter votre <a href='%{href}'>profile</a>"
+    complete: "Vous êtes administrateur ou organisateur pour ce site, compléter votre <a href='%{href}'>profil</a>. Sinon vous ne pourrez rien faire..."
     no_one: "aucun"
 
     header:
         help: "Aide"
         admin:
-            title: "Administration"
+            title: "Vie de l'OJ"
             dashboard: "Tableau de bord"
             users: "Tous les utilisateurs"
             email: "Envoyer des courriels"
@@ -27,6 +27,9 @@ fr:
             next: "Prochaine sortie"
             new: "Nouvelle sortie"
         signin: "Connexion"
+        blog:
+          title: Vie de l'OJ
+          title_connected: Blog
     footer:
         small:
             link: "Site web"
@@ -120,8 +123,10 @@ fr:
         show:
             event:
                 name: "sortie"
-                text: "Cette année, vous participez à %{event}"
+                text_y: "Cette année, vous participez à %{event}"
+                text_h: "Cette année, %{name} participe à %{event}"
                 no_inscription: "Cette année, vous ne participez à aucune sortie. %{anchor}"
+                no_inscription_h: "Cette année, %{name} ne participe à aucune sortie. %{anchor}"
                 participe: "Participez !"
             next_event: "Vous participez à une sortie dans %{date}"
             fixe: "Téléphone fixe : "
@@ -190,6 +195,7 @@ fr:
             responsable: "Responsable : "
             place: "Place  : "
             list_users: "Participants"
+            list_users_email: "Liste des adresses e-mails des participants"
             material: "Materiel : "
             no_material: "Aucun matériel n'est nécessaire"
             no_user: "Personne ne participe à cette sortie. Soit le premier!"

@@ -14,7 +14,7 @@
 
 # -*- encoding : utf-8 -*-
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation, :role_ids, :event_ids, :contact_attributes, :reason, :roles
+  attr_accessible :name, :email, :password, :password_confirmation, :role_ids, :event_ids, :reason, :roles, :contact_attributes
 
   ROLES = %w[admin super-admin ojien]
 
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   before_save { email.downcase! }
   before_save :create_remember_token
   has_and_belongs_to_many :events, order: 'starting_at ASC'
-  has_one :contact, inverse_of: :user
+  has_one :contact
   accepts_nested_attributes_for :contact
 
 
@@ -35,7 +35,10 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 5 }, :on => :create
   validates :reason, presence: true, on: :create
   validates :password_confirmation, presence: true, :on => :create
-  after_validation { self.errors.messages.delete(:password_digest) }
+
+  def display_name
+    contact.present? ? "#{contact.fName} #{contact.lName}" : name
+  end
 
   rails_admin do
     edit do
@@ -44,6 +47,9 @@ class User < ActiveRecord::Base
         enum do
           User::ROLES
         end
+      end
+      field :contact do
+        nested_form false
       end
       include_all_fields
       exclude_fields :bit_mask, :password_digest, :remember_token
