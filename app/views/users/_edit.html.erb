@@ -14,8 +14,8 @@
       <%= f.simple_fields_for :contact do |fc|%>
         <%= fc.input :fName%>
         <%= fc.input :lName%>
-        <%= fc.input :fixe, input_html: {type: 'phone'}%>
-        <%= fc.input :natel, input_html: {type: 'phone'}%>
+        <%= fc.input :fixe%>
+        <%= fc.input :natel%>
       <%end%>
 
       <%= f.submit yield(:submit), class: "btn btn-large btn-primary" %>
