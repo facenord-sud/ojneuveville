@@ -5,7 +5,7 @@ module EventsHelper
 
   def print_responsable(event)
     if event.responsable.blank?
-      link_to(event.user.name, event.user)
+      link_to(event.user.display_name, event.user)
     elsif ! event.responsable.blank?
       event.responsable
     else

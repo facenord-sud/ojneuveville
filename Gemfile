@@ -18,6 +18,8 @@ gem 'simple_form'
 gem 'bootstrap-datetimepicker-rails'
 gem 'rubypress'
 
+gem 'acts_as_commentable', '3.0.1'
+
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
