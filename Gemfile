@@ -19,6 +19,7 @@ gem 'bootstrap-datetimepicker-rails'
 gem 'rubypress'
 
 gem 'acts_as_commentable', '3.0.1'
+gem 'haml'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

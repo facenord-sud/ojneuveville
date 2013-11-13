@@ -16,6 +16,7 @@ OjNeuveville::Application.routes.draw do
     get '/inscription',  to: 'events#signup', as: "signup"
     get '/desinscription',  to: 'events#signout', as: "signout"
   end
+  resources :comments, only: [:create]
 
   resources :users, only: [:new, :create, :update, :show, :index, :edit], path: "membres" do
     delete 'supprimer-contact', action: :delete_contact, as: 'delete_contact'

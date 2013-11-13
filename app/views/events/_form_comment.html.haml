@@ -1,0 +1,6 @@
+=simple_form_for Comment.new do  |f|
+  = render 'shared/error_messages', object: f.object
+  =f.input :title
+  =f.input :comment, input_html: {rows: 3}
+  =hidden_field_tag :id, @event.id
+  =f.submit 'Commenter', class: "btn btn-large btn-primary"

@@ -17,7 +17,9 @@
 
 class Event < ActiveRecord::Base
   attr_accessible :delay, :description, :ending_at, :name, :place, :responsable, :starting_at, :price, :user_ids, :material_ids, :user_id
-  
+
+  acts_as_commentable
+
   has_and_belongs_to_many :users
   has_and_belongs_to_many :materiaux
   belongs_to :user

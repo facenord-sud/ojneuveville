@@ -83,3 +83,17 @@
 	<% end %>
 	<%end%>
 </div>
+<h3>Commentaires</h3>
+<ul>
+  <% @event.comments.recent.all.each do |a_comment| %>
+    <div>
+      <span class="label label-inverse"><%=link_to a_comment.user.display_name, a_comment.user%></span>
+      <h5><%=  a_comment.title%></h5>
+      <p>
+        <%= a_comment.comment %>
+      </p>
+      <hr/>
+    </div>
+  <% end %>
+</ul>
+<%= render 'events/form_comment' %>

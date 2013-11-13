@@ -296,6 +296,7 @@ DEPENDENCIES
   guard-livereload
   guard-rspec (= 1.2.1)
   guard-spork (= 1.2.0)
+  haml
   i18n
   jquery-rails (= 2.0.2)
   meta_request
