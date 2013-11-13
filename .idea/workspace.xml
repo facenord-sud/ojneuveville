@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/users/_edit.html.erb" afterPath="$PROJECT_DIR$/app/views/users/_edit.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/ability.rb" afterPath="$PROJECT_DIR$/app/models/ability.rb" />
     </list>
     <ignored path="sample_app_2nd_ed-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,7 +34,7 @@
     <file path="/temp.yml" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1378106238680" ignored="false" />
     <file path="/routes.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1384354316781" ignored="false" />
     <file path="/20130629094546_create_contacts.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1378105010462" ignored="false" />
-    <file path="/_edit.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1384356676952" ignored="false" />
+    <file path="/_edit.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1384357648662" ignored="false" />
     <file path="/all_email.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1383658337098" ignored="false" />
     <file path="/blogit.rb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1380496498967" ignored="false" />
     <file path="/_header.html.erb" changelist="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" time="1384350446950" ignored="false" />
@@ -96,8 +97,19 @@
       <file leaf-file-name="_edit.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/users/_edit.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="55" selection-start="519" selection-end="519" vertical-scroll-proportion="0.549273">
+            <state line="17" column="41" selection-start="518" selection-end="518" vertical-scroll-proportion="0.549273">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ability.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="52" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#976#1167#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -117,17 +129,6 @@
             <state line="7" column="98" selection-start="249" selection-end="249" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#50#245#2" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contacts_controller.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/contacts_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="12" selection-start="747" selection-end="747" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#737#1067#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,7 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/stylesheets/print.css" />
         <option value="$PROJECT_DIR$/config/initializers/setup_mail.rb" />
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/app/helpers/events_helper.rb" />
@@ -206,6 +206,7 @@
         <option value="$PROJECT_DIR$/app/controllers/comments_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/comment.rb" />
         <option value="$PROJECT_DIR$/app/views/events/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/ability.rb" />
         <option value="$PROJECT_DIR$/app/views/users/_edit.html.erb" />
       </list>
     </option>
@@ -1283,13 +1284,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131113143007_create_comments.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="13" selection-start="60" selection-end="60" vertical-scroll-proportion="0.031007752">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="10" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
@@ -1400,9 +1394,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/ability.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="52" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#976#1167#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/users/_edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="55" selection-start="519" selection-end="519" vertical-scroll-proportion="0.549273">
+        <state line="17" column="41" selection-start="518" selection-end="518" vertical-scroll-proportion="0.549273">
           <folding />
         </state>
       </provider>

@@ -9,10 +9,13 @@ class Ability
       can :programm, Event
     else
       if user.roles_are_empty?
-        can :index, Event
-        can :programm, Event
-        can [:show, :delete, :edit, :update, :delete_contact], User, id: user.id
-        can :show, User
+        #can :index, Event
+        #can :programm, Event
+        #can [:show, :delete, :edit, :update, :delete_contact], User, id: user.id
+        #can :show, User
+        ojien user
+        cannot :delete_contact, User
+        can :delete_contact, User, email: user.email
       end
       if user.has_roles? 'super-admin'
         can :manage, :all
