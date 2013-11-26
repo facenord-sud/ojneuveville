@@ -94,7 +94,7 @@ load_and_authorize_resource
           where('
             (events.starting_at BETWEEN :starting_at AND :ending_at)
             OR
-            (events.ending_at BETWEEN :starting_at AND :ending_at',
+            (events.ending_at BETWEEN :starting_at AND :ending_at)',
             starting_at: start_at,
             ending_at: end_at
           ).

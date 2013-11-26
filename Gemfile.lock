@@ -218,6 +218,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    redcarpet (3.0.0)
     remotipart (1.2.1)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
@@ -306,6 +307,7 @@ DEPENDENCIES
   rails-i18n
   rails_admin
   rails_admin-i18n
+  redcarpet
   rspec-rails (= 2.11.0)
   rubypress
   sass-rails (= 3.2.5)

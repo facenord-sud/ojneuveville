@@ -20,6 +20,7 @@ gem 'rubypress'
 
 gem 'acts_as_commentable', '3.0.1'
 gem 'haml'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

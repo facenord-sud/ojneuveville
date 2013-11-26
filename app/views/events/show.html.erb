@@ -19,7 +19,7 @@
   <p></p>
 <div class="well">
 	<h3><%= @event.name%>, <%= t :du%> <%= print_dates(@event)%></h3>
-	<p><%= @event.description%></p>
+	<p><%= markdown @event.description%></p>
     <p><strong><%= t('events.show.delay') %></strong><%= l @event.delay, format: :long %></p>
 	<p><strong><%= t "events.show.price"%></strong><%= @event.price%>.-</p>
 	<p><strong><%= t "events.show.place"%></strong><%= @event.place%></p>
