@@ -89,7 +89,17 @@ load_and_authorize_resource
 	private
 
 		def get_event_by_date(start_at, end_at)
-			Event.where(:starting_at => (start_at)..(end_at)).order("starting_at ASC").all
+			#Event.where(:starting_at => (start_at)..(end_at)).order("starting_at ASC").all
+      Event.
+          where('
+            (events.starting_at BETWEEN :starting_at AND :ending_at)
+            OR
+            (events.ending_at BETWEEN :starting_at AND :ending_at',
+            starting_at: start_at,
+            ending_at: end_at
+          ).
+          order('starting_at ASC').
+          all
 		end
 
 		def change_event
