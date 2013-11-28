@@ -1,23 +1,27 @@
 <tr>
-	<td>
-		<%if cannot? :read, Event%>
-		<%= event.name%>
-		<% end%>
-		<%if can? :read, Event%><%= link_to event do %>
-			<%= event.name%>
-		<% end%><% end%>
-		<%if can? :create, Event%>|
-		<%= link_to edit_event_path(event) do %>
-  			<i class="icon-pencil"></i>
-		<% end %><% end%>
-		<%if can? :delete, Event%>|
-		<%= link_to event, :method => :delete,
-                                 :confirm => t(:confirm) do %>
-  			<i class="icon-remove"></i>
-		<% end %><% end%>
-	</td>
-	<td><%= print_dates(event) %></td>
-	<%if can? :read, Event%><td><%= event.place%></td><% end%>
-	<td><%= event.price%>.-</td>
-	<%if can? :read, Event%><td><%= print_responsable event%></td><% end%>
+  <td>
+    <%if cannot? :read, Event%>
+        <%= event.name%>
+    <% end%>
+    <%if can? :read, Event%><%= link_to event do %>
+            <%= event.name%>
+            <% end%><% end%>
+    <div class="no-print">
+      <%if can? :create, Event%>|
+          <%= link_to edit_event_path(event) do %>
+              <i class="icon-pencil"></i>
+              <% end %>
+      <% end%>
+      <%if can? :delete, Event%>|
+          <%= link_to event, :method => :delete,
+                      :confirm => t(:confirm) do %>
+              <i class="icon-remove"></i>
+              <% end %>
+      <% end%>
+    </div>
+      </td>
+  <td><%= print_dates(event) %></td>
+  <%if can? :read, Event%><td><%= event.place%></td><% end%>
+  <td><%= event.price%>.-</td>
+  <%if can? :read, Event%><td><%= print_responsable event%></td><% end%>
 </tr>
