@@ -22,6 +22,8 @@ gem 'acts_as_commentable', '3.0.1'
 gem 'haml'
 gem 'redcarpet'
 
+gem 'rack-canonical-host'
+
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'

@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
       end
     end
   end
-
+  
   protect_from_forgery
 
   include SessionsHelper
