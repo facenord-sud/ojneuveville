@@ -5,7 +5,9 @@
     <% end%>
     <%if can? :read, Event%><%= link_to event do %>
             <%= event.name%>
-            <% end%><% end%>
+            <div class="no-print">(<%= events.users.size%>)</div>
+            <% end%>
+    <% end%>
     <div class="no-print">
       <%if can? :create, Event%>|
           <%= link_to edit_event_path(event) do %>

@@ -98,7 +98,7 @@ load_and_authorize_resource
             starting_at: start_at,
             ending_at: end_at
           ).
-          order('starting_at ASC').
+          order('starting_at ASC').includes(:users).
           all
 		end
 
