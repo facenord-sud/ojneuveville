@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77d14a4e-8d0c-4ebc-9f27-7a497fdfc19c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sample_app_2nd_ed-master.iml" afterPath="$PROJECT_DIR$/.idea/sample_app_2nd_ed-master.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/events/_event.html.erb" afterPath="$PROJECT_DIR$/app/views/events/_event.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/events_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/events_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sample_app_2nd_ed-master.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -117,7 +114,7 @@
       <file leaf-file-name="_event.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/events/_event.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="32" selection-start="195" selection-end="195" vertical-scroll-proportion="0.1592719">
+            <state line="7" column="44" selection-start="207" selection-end="207" vertical-scroll-proportion="0.1592719">
               <folding>
                 <element signature="tag#div#1;tag#td#0;tag#tr#0" expanded="true" />
               </folding>
@@ -1271,7 +1268,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/events/_event.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="32" selection-start="195" selection-end="195" vertical-scroll-proportion="0.1592719">
+        <state line="7" column="44" selection-start="207" selection-end="207" vertical-scroll-proportion="0.1592719">
           <folding>
             <element signature="tag#div#1;tag#td#0;tag#tr#0" expanded="true" />
           </folding>
